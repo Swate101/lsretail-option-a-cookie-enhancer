@@ -1,9 +1,9 @@
 # LS Retail Option A - Cookie Banner Enhancer
 
-[![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-green)](https://github.com/lsretail-option-a-cookie-enhancer)
-[![GDPR Compliant](https://img.shields.io/badge/GDPR-Compliant-blue)](https://github.com/lsretail-option-a-cookie-enhancer)
-[![Performance](https://img.shields.io/badge/Lighthouse-96%2F100-brightgreen)](https://github.com/lsretail-option-a-cookie-enhancer)
-[![Security](https://img.shields.io/badge/Security-OWASP%20Compliant-red)](https://github.com/lsretail-option-a-cookie-enhancer)
+[\![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-green)](https://github.com/Swate101/lsretail-option-a-cookie-enhancer)
+[\![GDPR Compliant](https://img.shields.io/badge/GDPR-Compliant-blue)](https://github.com/Swate101/lsretail-option-a-cookie-enhancer)
+[\![Performance](https://img.shields.io/badge/Lighthouse-96%2F100-brightgreen)](https://github.com/Swate101/lsretail-option-a-cookie-enhancer)
+[\![Security](https://img.shields.io/badge/Security-OWASP%20Compliant-red)](https://github.com/Swate101/lsretail-option-a-cookie-enhancer)
 
 > **Individual "Learn More" Links Implementation** - Enterprise HubSpot Cookie Banner Enhancement for LS Retail Portal 491011
 
@@ -27,7 +27,7 @@ This repository contains the **complete production-ready implementation** of Opt
 
 ### **Step 1: Upload Production Files** (5 minutes)
 ```bash
-# Upload these files to HubSpot File Manager:
+# Download and upload these files to HubSpot File Manager:
 /production-files/option-a-lsretail-cookie-enhancer.min.js     (17.3KB)
 /production-files/security-fixes.min.js                        (8.1KB)  
 /production-files/option-a-lsretail-cookie-enhancer.min.css    (8.3KB)
@@ -35,7 +35,7 @@ This repository contains the **complete production-ready implementation** of Opt
 
 ### **Step 2: Add to HubSpot Template** (3 minutes)
 ```html
-<!-- Add before closing </body> tag -->
+<\!-- Add before closing </body> tag -->
 <script src="./js/security-fixes.min.js" async></script>
 <script src="./js/option-a-lsretail-cookie-enhancer.min.js" async></script>
 <link rel="stylesheet" href="./css/option-a-lsretail-cookie-enhancer.min.css">
@@ -81,7 +81,7 @@ This repository contains the **complete production-ready implementation** of Opt
 │
 ├── 🧪 demos-testing/                      # Live demos and testing
 │   ├── SIMPLE_DEMO.html
-│   ├── test-option-a.html
+│   ├── DEMO.html
 │   └── testing-results/
 │
 ├── 🗄️ database-setup/                     # HubDB integration
@@ -108,7 +108,6 @@ This repository contains the **complete production-ready implementation** of Opt
 | **Browser Support** | 99.3% compatibility | Universal accessibility |
 
 ### **💰 ROI Analysis**
-- **Development Investment:** 48 hours total development time
 - **Compliance Value:** Complete GDPR/CCPA compliance ($50K+ value)
 - **Security Value:** Enterprise security audit and fixes ($25K+ value)  
 - **Performance Optimization:** 96/100 Lighthouse score ($15K+ value)
@@ -171,7 +170,7 @@ This repository contains the **complete production-ready implementation** of Opt
 ## 📱 **Live Demo**
 
 **🎯 Experience Option A in Action:**  
-[View Live Demo](demos-testing/SIMPLE_DEMO.html) - See the complete functionality working
+[View Live Demo](https://raw.githubusercontent.com/Swate101/lsretail-option-a-cookie-enhancer/main/demos-testing/SIMPLE_DEMO.html) - See the complete functionality working
 
 **Demo Features:**
 - Individual "Learn More" button expansion
@@ -185,7 +184,7 @@ This repository contains the **complete production-ready implementation** of Opt
 ## 📞 **Implementation Support**
 
 ### **Technical Support**
-- **Joseph Goerner** (joseph@dature.com) - Technical Implementation
+- **Technical Implementation Team** - Enterprise-level support
 - **Response Time:** < 4 hours for implementation questions
 - **Scope:** HubSpot integration, technical troubleshooting, optimization
 
@@ -204,8 +203,8 @@ This repository contains the **complete production-ready implementation** of Opt
 ## 🎯 **For LS Retail Stakeholders**
 
 ### **👨‍💼 Business Leadership**
-- Review: [Executive Summary](reports/PROJECT_SNAPSHOT.md)
-- Business Value: [ROI Analysis](reports/ENTERPRISE_DEPLOYMENT_PACKAGE.md)
+- Review: [Executive Summary](documentation/PROJECT_SNAPSHOT.md)
+- Business Value: [ROI Analysis](documentation/ENTERPRISE_DEPLOYMENT_PACKAGE.md)
 - Timeline: 15-minute implementation with immediate results
 
 ### **🔧 Technical Team**
@@ -261,4 +260,4 @@ This implementation has been **thoroughly tested**, **security audited**, **perf
 
 ---
 
-**🎯 Developed by Dature for LS Retail | Enterprise Ready | Production Tested | Compliance Verified**
+**🎯 Enterprise Ready | Production Tested | Compliance Verified**

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Retail Option A - Simple Demo</title>
+    
+    <style>
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #361d5c 0%, #4a2870 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(246, 195, 112, 0.2);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f6c370;
+        }
+        
+        .demo-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #f6c370;
+        }
+        
+        .demo-btn {
+            background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
+            color: #361d5c;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(246, 195, 112, 0.4);
+        }
+        
+        /* Cookie Banner Styles */
+        #hs-eu-cookie-confirmation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #361d5c 0%, #4a2870 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            border-top: 3px solid #f6c370;
+            display: none;
+        }
+        
+        #hs-eu-cookie-confirmation.show {
+            display: block;
+        }
+        
+        .banner-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .banner-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .banner-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .settings-btn {
+            background: transparent;
+            color: #f6c370;
+            border: 2px solid #f6c370;
+        }
+        
+        .settings-btn:hover {
+            background: #f6c370;
+            color: #361d5c;
+        }
+        
+        .accept-btn {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .decline-btn {
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Option A Categories */
+        .option-a-categories {
+            margin: 20px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid rgba(246, 195, 112, 0.2);
+            display: none;
+        }
+        
+        .option-a-categories.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .category-header h3 {
+            color: #f6c370;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        
+        .category {
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .category-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .category-icon {
+            font-size: 18px;
+        }
+        
+        .category-label {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .category-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .learn-more-btn {
+            background: transparent;
+            color: #f6c370;
+            border: 1px solid #f6c370;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .learn-more-btn:hover {
+            background: #f6c370;
+            color: #361d5c;
+        }
+        
+        .toggle {
+            position: relative;
+            width: 48px;
+            height: 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle.active {
+            background: #f6c370;
+        }
+        
+        .toggle::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle.active::before {
+            transform: translateX(24px);
+            background: #361d5c;
+        }
+        
+        .category-details {
+            max-height: 0;
+            overflow: hidden;
+            background: rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .category-details.expanded {
+            max-height: 300px;
+            padding: 15px;
+        }
+        
+        .cookie-list {
+            margin-top: 10px;
+        }
+        
+        .cookie-item {
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cookie-name {
+            font-weight: bold;
+            color: #f6c370;
+            font-size: 14px;
+        }
+        
+        .cookie-purpose {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+            margin: 4px 0;
+        }
+        
+        .cookie-description {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.3;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .save-btn {
+            background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
+            color: #361d5c;
+        }
+        
+        .accept-all-btn {
+            background: transparent;
+            color: #4caf50;
+            border: 1px solid #4caf50;
+        }
+        
+        .reject-all-btn {
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .banner-buttons, .category-controls, .action-buttons {
+                flex-direction: column;
+            }
+            
+            .category-item {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            
+            .category-controls {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>LS Retail Option A - Working Demo</h1>
+            <p>Individual "Learn More" Links Implementation</p>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="demo-btn" onclick="showBanner()">Show Cookie Banner</button>
+            <button class="demo-btn" onclick="hideBanner()">Hide Banner</button>
+            <button class="demo-btn" onclick="resetDemo()">Reset Demo</button>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #f6c370; margin-top: 0;">🎯 How to Experience Option A:</h3>
+            <ol style="line-height: 1.8;">
+                <li><strong>Click "Show Cookie Banner"</strong> - Displays LS Retail's cookie banner</li>
+                <li><strong>Click "Manage Cookie Preferences"</strong> - This triggers Option A functionality</li>
+                <li><strong>Click individual "Learn More" buttons</strong> - See detailed cookie information expand</li>
+                <li><strong>Toggle cookie preferences</strong> - Control individual categories</li>
+                <li><strong>Save your preferences</strong> - Apply the changes</li>
+            </ol>
+        </div>
+        
+        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px;">
+            <div style="color: #f6c370; font-weight: bold;">Status Monitor:</div>
+            <div>Banner Status: <span id="banner-status">Hidden</span></div>
+            <div>Option A Status: <span id="option-status">Ready</span></div>
+            <div>Categories Status: <span id="categories-status">Not Shown</span></div>
+        </div>
+    </div>
+    
+    <!-- Mock HubSpot Cookie Banner -->
+    <div id="hs-eu-cookie-confirmation">
+        <div class="banner-content">
+            <div id="hs-eu-policy-wording">
+                <p>This website uses cookies to function properly and, with your consent, to collect data for analytics and personalized content. Essential cookies are always active. You can choose which types of optional cookies to allow by selecting "cookie settings" below.</p>
+            </div>
+            
+            <!-- Option A Categories (Initially Hidden) -->
+            <div id="option-a-categories" class="option-a-categories">
+                <div class="category-header">
+                    <h3>Choose Your Cookie Preferences</h3>
+                    <p>Click "Learn More" to see details about each cookie category.</p>
+                </div>
+                
+                <!-- Essential Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">🔒</span>
+                            <span class="category-label">Essential Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('essential')">Learn More</button>
+                            <div class="toggle active" title="Required - Cannot be disabled"></div>
+                        </div>
+                    </div>
+                    <div id="essential-details" class="category-details">
+                        <p><strong>These cookies are necessary for LS Retail's platform to function properly.</strong></p>
+                        <div class="cookie-list">
+                            <div class="cookie-item">
+                                <div class="cookie-name">_hs_session</div>
+                                <div class="cookie-purpose">LS Retail session management</div>
+                                <div class="cookie-description">Essential for secure access to LS Central and maintaining your dashboard session while navigating between different modules.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hs_opt_out</div>
+                                <div class="cookie-purpose">Privacy preferences storage</div>
+                                <div class="cookie-description">Remembers your cookie consent choices for LS Retail services so we don't ask repeatedly.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">📊</span>
+                            <span class="category-label">Analytics Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('analytics')">Learn More</button>
+                            <div class="toggle" onclick="toggleConsent('analytics', this)"></div>
+                        </div>
+                    </div>
+                    <div id="analytics-details" class="category-details">
+                        <p><strong>Help us understand how businesses use our retail solutions.</strong></p>
+                        <div class="cookie-list">
+                            <div class="cookie-item">
+                                <div class="cookie-name">_ga</div>
+                                <div class="cookie-purpose">Website analytics and optimization</div>
+                                <div class="cookie-description">Helps us understand how retail businesses use our website and which LS Central features are most valuable for different business types.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hstc</div>
+                                <div class="cookie-purpose">Visitor behavior tracking</div>
+                                <div class="cookie-description">Tracks visitor sessions to optimize the LS Central user experience and identify which features are most interesting to prospects.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-icon">🎯</span>
+                            <span class="category-label">Marketing Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('marketing')">Learn More</button>
+                            <div class="toggle" onclick="toggleConsent('marketing', this)"></div>
+                        </div>
+                    </div>
+                    <div id="marketing-details" class="category-details">
+                        <p><strong>Enable targeted content about our unified commerce solutions.</strong></p>
+                        <div class="cookie-list">
+                            <div class="cookie-item">
+                                <div class="cookie-name">_fbp</div>
+                                <div class="cookie-purpose">Targeted retail industry advertising</div>
+                                <div class="cookie-description">Enables us to show targeted information about LS Central solutions to retail professionals who have shown interest in unified commerce platforms.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hs_cta_track</div>
+                                <div class="cookie-purpose">Content personalization</div>
+                                <div class="cookie-description">Personalizes your LS Central experience by showing case studies and resources most relevant to your type of retail business.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn save-btn" onclick="savePreferences()">Save Preferences</button>
+                    <button class="action-btn accept-all-btn" onclick="acceptAll()">Accept All</button>
+                    <button class="action-btn reject-all-btn" onclick="rejectAll()">Reject All Optional</button>
+                </div>
+            </div>
+            
+            <div class="banner-buttons">
+                <button id="hs-eu-cookie-settings-button" class="banner-btn settings-btn" onclick="showOptionA()">Cookie settings</button>
+                <button class="banner-btn accept-btn" onclick="acceptAll()">Accept all</button>
+                <button class="banner-btn decline-btn" onclick="declineAll()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo State
+        let consentState = {
+            essential: true,
+            analytics: false,
+            marketing: false
+        };
+        
+        // Demo Functions
+        function showBanner() {
+            const banner = document.getElementById('hs-eu-cookie-confirmation');
+            banner.classList.add('show');
+            document.getElementById('banner-status').textContent = 'Visible';
+        }
+        
+        function hideBanner() {
+            const banner = document.getElementById('hs-eu-cookie-confirmation');
+            const categories = document.getElementById('option-a-categories');
+            banner.classList.remove('show');
+            categories.classList.remove('show');
+            document.getElementById('banner-status').textContent = 'Hidden';
+            document.getElementById('categories-status').textContent = 'Hidden';
+        }
+        
+        function resetDemo() {
+            hideBanner();
+            consentState = { essential: true, analytics: false, marketing: false };
+            updateToggles();
+            // Close all expanded details
+            document.querySelectorAll('.category-details').forEach(detail => {
+                detail.classList.remove('expanded');
+            });
+            // Reset button text
+            document.querySelectorAll('.learn-more-btn').forEach(btn => {
+                btn.textContent = 'Learn More';
+            });
+            document.getElementById('option-status').textContent = 'Reset';
+            setTimeout(() => {
+                document.getElementById('option-status').textContent = 'Ready';
+            }, 1000);
+        }
+        
+        // Option A Functions
+        function showOptionA() {
+            const categories = document.getElementById('option-a-categories');
+            const settingsBtn = document.getElementById('hs-eu-cookie-settings-button');
+            
+            if (categories.classList.contains('show')) {
+                categories.classList.remove('show');
+                settingsBtn.textContent = 'Cookie settings';
+                document.getElementById('categories-status').textContent = 'Hidden';
+            } else {
+                categories.classList.add('show');
+                settingsBtn.textContent = 'Hide Cookie Preferences';
+                document.getElementById('categories-status').textContent = 'Showing Individual Categories';
+                document.getElementById('option-status').textContent = 'Active - Option A Engaged!';
+            }
+        }
+        
+        function toggleDetails(category) {
+            const details = document.getElementById(category + '-details');
+            const button = event.target;
+            
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+                button.textContent = 'Learn More';
+            } else {
+                details.classList.add('expanded');
+                button.textContent = 'Show Less';
+            }
+        }
+        
+        function toggleConsent(category, toggleEl) {
+            if (category === 'essential') return; // Cannot toggle essential
+            
+            consentState[category] = !consentState[category];
+            toggleEl.classList.toggle('active');
+            
+            console.log('Consent updated:', category, '=', consentState[category]);
+        }
+        
+        function updateToggles() {
+            Object.keys(consentState).forEach(category => {
+                const toggle = document.querySelector(`[onclick*="${category}"]`);
+                if (toggle && toggle.classList) {
+                    if (consentState[category]) {
+                        toggle.classList.add('active');
+                    } else {
+                        toggle.classList.remove('active');
+                    }
+                }
+            });
+        }
+        
+        function savePreferences() {
+            console.log('Saving preferences:', consentState);
+            showSuccessMessage('Your cookie preferences have been saved!');
+            hideBanner();
+        }
+        
+        function acceptAll() {
+            consentState.analytics = true;
+            consentState.marketing = true;
+            updateToggles();
+            console.log('Accepted all cookies');
+            showSuccessMessage('All cookies accepted!');
+            hideBanner();
+        }
+        
+        function rejectAll() {
+            consentState.analytics = false;
+            consentState.marketing = false;
+            updateToggles();
+            console.log('Rejected optional cookies');
+            showSuccessMessage('Optional cookies rejected!');
+            hideBanner();
+        }
+        
+        function declineAll() {
+            consentState.analytics = false;
+            consentState.marketing = false;
+            console.log('Declined all cookies');
+            showSuccessMessage('All optional cookies declined!');
+            hideBanner();
+        }
+        
+        function showSuccessMessage(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4caf50;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 6px;
+                box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+                z-index: 10001;
+                font-weight: 600;
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+        
+        // Auto-demo
+        setTimeout(() => {
+            showBanner();
+            
+            // Show helpful hint
+            setTimeout(() => {
+                const hint = document.createElement('div');
+                hint.style.cssText = `
+                    position: fixed;
+                    bottom: 150px;
+                    right: 20px;
+                    background: #f6c370;
+                    color: #361d5c;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                    z-index: 1001;
+                    animation: pulse 2s infinite;
+                `;
+                hint.innerHTML = '👆 Click "Cookie settings" to see Option A!';
+                document.body.appendChild(hint);
+                
+                setTimeout(() => hint.remove(), 8000);
+            }, 2000);
+        }, 2000);
+    </script>
+</body>
+</html>

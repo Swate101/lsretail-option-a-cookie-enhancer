@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Retail Option A Cookie Enhancer - Test Page</title>
+    
+    <!-- Option A CSS -->
+    <link rel="stylesheet" href="option-a-lsretail-cookie-enhancer.css">
+    
+    <style>
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #361d5c 0%, #4a2870 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(246, 195, 112, 0.2);
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f6c370;
+        }
+        
+        .test-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f6c370;
+        }
+        
+        .test-header p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            border-left: 4px solid #f6c370;
+        }
+        
+        .test-section h3 {
+            margin-top: 0;
+            color: #f6c370;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .test-controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .test-btn {
+            background: transparent;
+            color: #f6c370;
+            border: 2px solid #f6c370;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            background: #f6c370;
+            color: #361d5c;
+            transform: translateY(-2px);
+        }
+        
+        .test-btn.primary {
+            background: #f6c370;
+            color: #361d5c;
+        }
+        
+        .test-btn.primary:hover {
+            background: #ffd67b;
+        }
+        
+        .status-display {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(246, 195, 112, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .status-item {
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .status-label {
+            font-weight: 600;
+            color: #f6c370;
+            margin-bottom: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        .status-value {
+            font-size: 14px;
+            word-break: break-all;
+        }
+        
+        /* Mock HubSpot Banner Styles */
+        #hs-eu-cookie-confirmation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #361d5c 0%, #4a2870 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-family: inherit;
+            border-top: 3px solid #f6c370;
+        }
+        
+        #hs-eu-cookie-confirmation-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        #hs-eu-policy-wording {
+            margin-bottom: 20px;
+        }
+        
+        #hs-eu-policy-wording p {
+            margin: 0;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        #hs-eu-policy-wording a {
+            color: #f6c370;
+            text-decoration: underline;
+        }
+        
+        #hs-eu-cookie-disclaimer {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin: 15px 0;
+        }
+        
+        #hs-eu-confirmation-button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        #hs-eu-cookie-settings-button,
+        #hs-eu-confirmation-button,
+        #hs-eu-decline-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        #hs-eu-cookie-settings-button {
+            background: transparent;
+            color: #f6c370;
+            border: 2px solid #f6c370;
+        }
+        
+        #hs-eu-cookie-settings-button:hover {
+            background: #f6c370;
+            color: #361d5c;
+        }
+        
+        #hs-eu-confirmation-button {
+            background: #4caf50;
+            color: white;
+        }
+        
+        #hs-eu-confirmation-button:hover {
+            background: #66bb6a;
+        }
+        
+        #hs-eu-decline-button {
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        #hs-eu-decline-button:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        /* Hide banner initially */
+        .banner-hidden {
+            display: none !important;
+        }
+        
+        @media (max-width: 768px) {
+            #hs-eu-confirmation-button-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            #hs-eu-cookie-settings-button,
+            #hs-eu-confirmation-button,
+            #hs-eu-decline-button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>Option A: Individual Learn More Links</h1>
+            <p>Test Implementation Based on Live LS Retail Banner Analysis</p>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Test Controls</h3>
+            <p>Use these controls to test the Option A functionality:</p>
+            <div class="test-controls">
+                <button class="test-btn primary" onclick="showBanner()">Show Cookie Banner</button>
+                <button class="test-btn" onclick="hideBanner()">Hide Banner</button>
+                <button class="test-btn" onclick="resetConsent()">Reset Consent</button>
+                <button class="test-btn" onclick="triggerSettings()">Trigger Settings</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 Implementation Status</h3>
+            <div class="status-display">
+                <div class="status-grid">
+                    <div class="status-item">
+                        <div class="status-label">Banner Detection</div>
+                        <div class="status-value" id="banner-status">Not Detected</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label">Option A Status</div>
+                        <div class="status-value" id="option-a-status">Loading...</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label">HubSpot API</div>
+                        <div class="status-value" id="hubspot-status">Checking...</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label">Categories Injected</div>
+                        <div class="status-value" id="categories-status">Pending</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🎯 Option A Key Features</h3>
+            <ul style="line-height: 1.8; font-size: 14px;">
+                <li><strong>Banner Interception:</strong> Detects #hs-eu-cookie-confirmation from live analysis</li>
+                <li><strong>Settings Button Override:</strong> Intercepts "Cookie settings" button click</li>
+                <li><strong>Individual Categories:</strong> Injects expandable sections for each cookie type</li>
+                <li><strong>Learn More Buttons:</strong> Individual expandable details for each category</li>
+                <li><strong>HubSpot Integration:</strong> Uses portal 491011 and consent API</li>
+                <li><strong>LS Retail Styling:</strong> Matches brand colors (#361d5c, #f6c370)</li>
+                <li><strong>Mobile Responsive:</strong> Optimized for all screen sizes</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>📱 Testing Instructions</h3>
+            <ol style="line-height: 1.8;">
+                <li><strong>Show Banner:</strong> Click "Show Cookie Banner" to display the mock HubSpot banner</li>
+                <li><strong>Click "Manage Cookie Preferences":</strong> This triggers Option A category injection</li>
+                <li><strong>Test Learn More:</strong> Click individual "Learn More" buttons on each category</li>
+                <li><strong>Toggle Preferences:</strong> Use the toggle switches to change cookie preferences</li>
+                <li><strong>Save/Accept/Reject:</strong> Test the action buttons at the bottom</li>
+                <li><strong>Mobile Test:</strong> Resize window to test responsive design</li>
+            </ol>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔍 Consent State Monitor</h3>
+            <div class="status-display">
+                <div class="status-label">Current Consent State</div>
+                <div id="consent-monitor" style="font-family: monospace; font-size: 12px; color: #f6c370;">
+                    Waiting for consent updates...
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mock HubSpot Cookie Banner (based on live analysis) -->
+    <div id="hs-eu-cookie-confirmation" class="banner-hidden" role="dialog" aria-describedby="hs-eu-policy-wording" aria-label="Cookie banner" tabindex="0">
+        <div id="hs-eu-cookie-confirmation-inner">
+            <div id="hs-eu-policy-wording" tabindex="0">
+                <p>This website uses cookies to function properly and, with your consent, to collect data for analytics and personalized content. Essential cookies are always active. You can choose which types of optional cookies to allow by selecting "cookie settings" below. See also our <a href="#privacy" title="Privacy Policy" target="_blank" rel="noopener">Privacy Policy</a> for details and any questions.</p>
+            </div>
+            <p id="hs-eu-cookie-disclaimer" tabindex="0">If you decline, your information won't be tracked when you visit this website. A single cookie will be used in your browser to remember your preference not to be tracked.</p>
+            <div id="hs-eu-cookie-confirmation-buttons-area">
+                <div id="hs-eu-confirmation-button-group">
+                    <button id="hs-eu-cookie-settings-button" aria-label="Cookie settings" tabindex="0">Cookie settings</button>
+                    <button id="hs-eu-confirmation-button" aria-label="Accept all" tabindex="0">Accept all</button>
+                    <button id="hs-eu-decline-button" aria-label="Decline" tabindex="0">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Option A JavaScript -->
+    <script src="option-a-lsretail-cookie-enhancer.js"></script>
+    
+    <script>
+        // Test page functionality
+        function showBanner() {
+            const banner = document.getElementById('hs-eu-cookie-confirmation');
+            banner.classList.remove('banner-hidden');
+            updateStatus('banner-status', 'Visible');
+        }
+        
+        function hideBanner() {
+            const banner = document.getElementById('hs-eu-cookie-confirmation');
+            banner.classList.add('banner-hidden');
+            updateStatus('banner-status', 'Hidden');
+        }
+        
+        function resetConsent() {
+            // Clear localStorage
+            localStorage.removeItem('lsretail_option_a_cookies');
+            localStorage.removeItem('__hs_cookie_cat_pref');
+            
+            // Reset consent monitor
+            updateConsentMonitor({});
+            
+            alert('Consent data cleared! Option A will reinitialize.');
+            setTimeout(() => location.reload(), 1000);
+        }
+        
+        function triggerSettings() {
+            const settingsBtn = document.getElementById('hs-eu-cookie-settings-button');
+            if (settingsBtn) {
+                settingsBtn.click();
+            } else {
+                alert('Show banner first, then try triggering settings');
+            }
+        }
+        
+        function updateStatus(elementId, text) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.textContent = text;
+            }
+        }
+        
+        function updateConsentMonitor(consent) {
+            const monitor = document.getElementById('consent-monitor');
+            if (monitor) {
+                monitor.textContent = JSON.stringify(consent, null, 2);
+            }
+        }
+        
+        // Monitor Option A status
+        function checkOptionAStatus() {
+            if (typeof window.LSRetailOptionA !== 'undefined') {
+                updateStatus('option-a-status', 'Loaded Successfully');
+                updateStatus('hubspot-status', window.LSRetailOptionA.hubspotAPI.initialized ? 'Connected' : 'Mock Mode');
+                
+                // Check if categories are injected
+                const categoriesContainer = document.getElementById('ls-option-a-categories');
+                updateStatus('categories-status', categoriesContainer ? 'Injected' : 'Not Yet');
+                
+                // Monitor consent changes
+                if (window._hsp && window._hsp.consentListener) {
+                    const originalListener = window._hsp.consentListener;
+                    window._hsp.consentListener = function(consent) {
+                        updateConsentMonitor(consent);
+                        originalListener(consent);
+                    };
+                }
+            } else {
+                updateStatus('option-a-status', 'Not Loaded');
+                setTimeout(checkOptionAStatus, 500);
+            }
+        }
+        
+        // Initialize status monitoring
+        document.addEventListener('DOMContentLoaded', function() {
+            checkOptionAStatus();
+            updateStatus('banner-status', 'Hidden');
+            
+            // Monitor for banner detection
+            const observer = new MutationObserver(function() {
+                const banner = document.getElementById('hs-eu-cookie-confirmation');
+                if (banner && !banner.classList.contains('banner-hidden')) {
+                    updateStatus('banner-status', 'Detected & Visible');
+                }
+            });
+            
+            observer.observe(document.body, { 
+                childList: true, 
+                subtree: true, 
+                attributes: true, 
+                attributeFilter: ['class', 'style'] 
+            });
+        });
+        
+        // Show banner automatically after 2 seconds for demo
+        setTimeout(() => {
+            showBanner();
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -15,8 +15,11 @@ HubSpot cookie banner enhancement with individual "Learn More" links for each co
 - [Implementation Guide](IMPLEMENTATION_GUIDE.md) - Installation instructions
 - [Testing Report](TESTING_REPORT.md) - Browser compatibility testing results
 
-### Demo
-- `demos-testing/SIMPLE_DEMO.html` - Working demonstration
+### Live Demo
+🔗 **[View Live Demo](https://swate101.github.io/lsretail-option-a-cookie-enhancer/)** - Working demonstration online
+
+### Local Demo Files
+- `demos-testing/SIMPLE_DEMO.html` - Download and run locally
 
 ## Quick Installation
 

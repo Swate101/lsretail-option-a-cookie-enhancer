@@ -1,0 +1,38 @@
+{
+  "categories": [
+    {
+      "key": "1",
+      "id": "essential",
+      "label": "Essential Cookies",
+      "description": "These cookies are necessary for LS Retail's platform to function properly and cannot be disabled.",
+      "required": true,
+      "cookieCount": 21
+    },
+    {
+      "key": "2",
+      "id": "functional",
+      "label": "Functional Cookies",
+      "description": "Enable enhanced functionality and personalization features for improved user experience.",
+      "required": false,
+      "cookieCount": 9
+    },
+    {
+      "key": "3",
+      "id": "analytics",
+      "label": "Analytics Cookies",
+      "description": "Help us understand how businesses use our retail solutions to improve our products.",
+      "required": false,
+      "cookieCount": 10
+    },
+    {
+      "key": "4",
+      "id": "marketing",
+      "label": "Marketing Cookies",
+      "description": "Enable targeted content about our unified commerce solutions for your business type.",
+      "required": false,
+      "cookieCount": 14
+    }
+  ],
+  "totalCookies": 54,
+  "hubspotSyncDate": "2025-08-19T12:35:34.655Z"
+}

@@ -1,0 +1,598 @@
+{
+  "rows": [
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hscta.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "30 minutes",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hubspotvideo.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "ar_debug",
+        "purpose": "Website performance analytics",
+        "duration": "Session",
+        "description": "Website performance analytics for LS Retail website and services.",
+        "provider": "google-analytics.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "sp_t",
+        "purpose": "Spotify plugin functionality",
+        "duration": "Session",
+        "description": "Required to ensure the functionality of the integrated Spotify plugin. This does not result in any cross-site functionality.",
+        "provider": "spotify.com",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "sp_landing",
+        "purpose": "Spotify integration",
+        "duration": "Session",
+        "description": "Required to ensure the functionality of the integrated Spotify plugin. This does not result in any cross-site functionality.",
+        "provider": "spotify.com",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "_ga",
+        "purpose": "Google Analytics tracking",
+        "duration": "13 months",
+        "description": "ID used to identify users",
+        "provider": "lsretail.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__hs_do_not_track",
+        "purpose": "HubSpot privacy preferences",
+        "duration": "6 months",
+        "description": "Prevents the tracking code from sending any information to HubSpot",
+        "provider": "lsretail.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "MR",
+        "purpose": "Microsoft advertising analytics",
+        "duration": "1 week",
+        "description": "Used to collect information for analytics purposes.",
+        "provider": "bing.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "__hstc",
+        "purpose": "HubSpot visitor analytics",
+        "duration": "6 months",
+        "description": "Analytics tracking cookie",
+        "provider": "lsretail.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "AnalyticsSyncHistory",
+        "purpose": "LinkedIn analytics sync",
+        "duration": "1 month",
+        "description": "Used to store information about the time a sync with the lms_analytics cookie took place for users in the Designated Countries",
+        "provider": "linkedin.com",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "usemessages.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "li_sugr",
+        "purpose": "LinkedIn user identification",
+        "duration": "3 months",
+        "description": "Used to make a probabilistic match of a user's identity outside the Designated Countries",
+        "provider": "linkedin.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "_ga_CWBWGSSZTV",
+        "purpose": "Google Analytics tracking",
+        "duration": "13 months",
+        "description": "Used to persist session state",
+        "provider": "lsretail.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "SM",
+        "purpose": "Website performance analytics",
+        "duration": "Session",
+        "description": "Website performance analytics for LS Retail website and services.",
+        "provider": "clarity.ms",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hs-analytics.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "hubspotutk",
+        "purpose": "HubSpot visitor identification",
+        "duration": "6 months",
+        "description": "Contains visitor's identity",
+        "provider": "lsretail.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "__hssrc",
+        "purpose": "HubSpot session identification",
+        "duration": "Session",
+        "description": "Used to determine if a session is a new session",
+        "provider": "lsretail.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "ANONCHK",
+        "purpose": "Bing ads verification",
+        "duration": "Session",
+        "description": "Used to store session ID for a users session to ensure that clicks from adverts on the Bing search engine are verified for reporting purposes and for personalisation",
+        "provider": "clarity.ms",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "bcookie",
+        "purpose": "LinkedIn tracking",
+        "duration": "1 year",
+        "description": "Used by LinkedIn to track the use of embedded services.",
+        "provider": "linkedin.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hs-banner.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "__hssc",
+        "purpose": "HubSpot session tracking",
+        "duration": "30 minutes",
+        "description": "Analytics session cookie",
+        "provider": "lsretail.com",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "_fbp",
+        "purpose": "Facebook Pixel tracking",
+        "duration": "3 months",
+        "description": "Facebook analytics cookie",
+        "provider": "lsretail.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "_gcl_au",
+        "purpose": "Google Ads conversion tracking",
+        "duration": "3 months",
+        "description": "Used by Google AdSense for experimenting with advertisement efficiency across websites using their services.",
+        "provider": "lsretail.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "_rdt_uuid",
+        "purpose": "Reddit Pixel tracking",
+        "duration": "Session",
+        "description": "This cookie is set by Reddit and is used for remarketing on reddit.com",
+        "provider": "lsretail.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "linkedin.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hsadspixel.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "30 minutes",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hubspot.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "_clck",
+        "purpose": "Microsoft Clarity user session",
+        "duration": "Session",
+        "description": "Microsoft Clarity user session tracking to optimize LS Retail website performance and user experience.",
+        "provider": "lsretail.com",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "SRM_B",
+        "purpose": "Bing user behavior tracking",
+        "duration": "Session",
+        "description": " Collected user data is specifically adapted to the user or device. The usercan also be followed outside of the loaded website, creating a picture of the visitor's behavior.",
+        "provider": "bing.com",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "MUID",
+        "purpose": "Microsoft user identification",
+        "duration": "Session",
+        "description": "Identifies unique web browsers visiting Microsoft sites. These cookies are used for advertising, site analytics, and other operational purposes.",
+        "provider": "clarity.ms",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hsappstatic.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "lidc",
+        "purpose": "LinkedIn session management",
+        "duration": "1 day",
+        "description": "Used by the social networking service, LinkedIn, for tracking the use of embedded services.",
+        "provider": "linkedin.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hsforms.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "MR",
+        "purpose": "Microsoft advertising analytics",
+        "duration": "Session",
+        "description": "Used to collect information for analytics purposes.",
+        "provider": "clarity.ms",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "UserMatchHistory",
+        "purpose": "LinkedIn advertising",
+        "duration": "1 month",
+        "description": "These cookies are set by LinkedIn for advertising purposes, including: tracking visitors so that more relevant ads can be presented, allowing users to use the 'Apply with LinkedIn' or the 'Sign-in with LinkedIn' functions, collecting information about how visitors use the site, etc.",
+        "provider": "linkedin.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "bscookie",
+        "purpose": "LinkedIn embedded services",
+        "duration": "1 year",
+        "description": "Used by LinkedIn to track the use of embedded services.",
+        "provider": "linkedin.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "30 minutes",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "lsretail.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "3",
+        "cookie_name": "CLID",
+        "purpose": "Website performance analytics",
+        "duration": "Session",
+        "description": "Website performance analytics for LS Retail website and services.",
+        "provider": "clarity.ms",
+        "category_name": "Analytics Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "_clsk",
+        "purpose": "Microsoft Clarity session data",
+        "duration": "Session",
+        "description": "Microsoft Clarity session data collection for website optimization and retail customer journey analysis.",
+        "provider": "lsretail.com",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "MUID",
+        "purpose": "Microsoft user identification",
+        "duration": "13 months",
+        "description": "Identifies unique web browsers visiting Microsoft sites. These cookies are used for advertising, site analytics, and other operational purposes.",
+        "provider": "bing.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__hs_cookie_cat_pref",
+        "purpose": "Cookie consent preferences",
+        "duration": "Session",
+        "description": "The HubSpot Cookie Banner's consent preferences cookie.",
+        "provider": "lsretail.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "30 minutes",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hubspotusercontent-na1.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "ARRAffinitySameSite",
+        "purpose": "Azure load balancing",
+        "duration": "Session",
+        "description": "When using Microsoft Azure as a hosting platform and enabling load balancing, this cookie ensures that  requests from one visitor's browsing session are always handled by the same server in the cluster.",
+        "provider": "runevents.net",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "test_cookie",
+        "purpose": "Google DoubleClick testing",
+        "duration": "15 minutes",
+        "description": "This cookie is set by DoubleClick (which is owned by Google) to determine if the website visitor's browser supports cookies.",
+        "provider": "doubleclick.net",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "NID",
+        "purpose": "Google services optimization",
+        "duration": "6 months",
+        "description": "This cookies is used to collect website statistics and track conversion rates and Google ad personalisation",
+        "provider": "google.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "VISITOR_INFO1_LIVE",
+        "purpose": "YouTube video analytics",
+        "duration": "6 months",
+        "description": "Tries to estimate the users' bandwidth on pages with integrated YouTube videos.",
+        "provider": "youtube.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "IDE",
+        "purpose": "Google DoubleClick advertising",
+        "duration": "13 months",
+        "description": "This cookie is used for targeting, analyzing and optimisation of ad campaigns in DoubleClick/Google Marketing Suite ",
+        "provider": "doubleclick.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__Secure-ROLLOUT_TOKEN",
+        "purpose": "Essential website functionality",
+        "duration": "Session",
+        "description": "Essential website functionality for LS Retail website and services.",
+        "provider": "youtube.com",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hsforms.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hubspot.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "1",
+        "cookie_name": "__cf_bm",
+        "purpose": "Cloudflare bot management",
+        "duration": "Session",
+        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.",
+        "provider": "hubspotusercontent10.net",
+        "category_name": "Essential Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "2",
+        "cookie_name": "YSC",
+        "purpose": "YouTube session tracking",
+        "duration": "Session",
+        "description": "Registers a unique ID to keep statistics of what videos from YouTube the user has seen.",
+        "provider": "youtube.com",
+        "category_name": "Functional Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "fr",
+        "purpose": "Facebook advertising",
+        "duration": "3 months",
+        "description": "Contains a unique browser and user ID, used for targeted advertising.",
+        "provider": "facebook.com",
+        "category_name": "Marketing Cookies"
+      }
+    },
+    {
+      "values": {
+        "category_key": "4",
+        "cookie_name": "VISITOR_PRIVACY_METADATA",
+        "purpose": "Targeted advertising",
+        "duration": "Session",
+        "description": "Targeted advertising for LS Retail website and services.",
+        "provider": "youtube.com",
+        "category_name": "Marketing Cookies"
+      }
+    }
+  ]
+}

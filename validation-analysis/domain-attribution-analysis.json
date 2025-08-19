@@ -1,0 +1,332 @@
+{
+  "totalCookies": 54,
+  "domainMismatches": 27,
+  "missingDescriptions": 7,
+  "categoryIssues": 2,
+  "allIssues": [
+    {
+      "cookieName": "ar_debug",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "google-analytics.com",
+      "category": "analytics",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for ar_debug"
+    },
+    {
+      "cookieName": "sp_t",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "spotify.com",
+      "category": "functionality",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie sp_t from spotify.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "sp_landing",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "spotify.com",
+      "category": "functionality",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie sp_landing from spotify.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "MR",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "bing.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie MR from bing.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "AnalyticsSyncHistory",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "linkedin.com",
+      "category": "functionality",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie AnalyticsSyncHistory from linkedin.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "li_sugr",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "linkedin.com",
+      "category": "analytics",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie li_sugr from linkedin.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "SM",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "analytics",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for SM"
+    },
+    {
+      "cookieName": "ANONCHK",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie ANONCHK from clarity.ms should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "bcookie",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "linkedin.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie bcookie from linkedin.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "__cf_bm",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "linkedin.com",
+      "category": "necessary",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie __cf_bm from linkedin.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "SRM_B",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "bing.com",
+      "category": "functionality",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie SRM_B from bing.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "MUID",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "necessary",
+      "issue": "Potentially incorrect category",
+      "severity": "medium",
+      "recommendation": "Review category assignment for MUID"
+    },
+    {
+      "cookieName": "lidc",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "linkedin.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie lidc from linkedin.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "MR",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie MR from clarity.ms should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "UserMatchHistory",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "linkedin.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie UserMatchHistory from linkedin.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "bscookie",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "linkedin.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie bscookie from linkedin.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "CLID",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "analytics",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for CLID"
+    },
+    {
+      "cookieName": "MUID",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "bing.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie MUID from bing.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "ARRAffinitySameSite",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "runevents.net",
+      "category": "functionality",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie ARRAffinitySameSite from runevents.net should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "test_cookie",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "doubleclick.net",
+      "category": "functionality",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie test_cookie from doubleclick.net should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "NID",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "google.com",
+      "category": "necessary",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie NID from google.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "VISITOR_INFO1_LIVE",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "youtube.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie VISITOR_INFO1_LIVE from youtube.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "IDE",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "doubleclick.net",
+      "category": "necessary",
+      "issue": "Potentially incorrect category",
+      "severity": "medium",
+      "recommendation": "Review category assignment for IDE"
+    },
+    {
+      "cookieName": "__Secure-ROLLOUT_TOKEN",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "youtube.com",
+      "category": "necessary",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for __Secure-ROLLOUT_TOKEN"
+    },
+    {
+      "cookieName": "YSC",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "youtube.com",
+      "category": "functionality",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie YSC from youtube.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "fr",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "facebook.com",
+      "category": "advertisement",
+      "issue": "Third-party cookie showing lsretail.com domain",
+      "severity": "high",
+      "recommendation": "Cookie fr from facebook.com should show actual provider domain, not lsretail.com"
+    },
+    {
+      "cookieName": "VISITOR_PRIVACY_METADATA",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "youtube.com",
+      "category": "advertisement",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for VISITOR_PRIVACY_METADATA"
+    },
+    {
+      "cookieName": "ar_debug",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "google-analytics.com",
+      "category": "analytics",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for ar_debug"
+    },
+    {
+      "cookieName": "SM",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "analytics",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for SM"
+    },
+    {
+      "cookieName": "_clck",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "lsretail.com",
+      "category": "functionality",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for _clck"
+    },
+    {
+      "cookieName": "MUID",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "necessary",
+      "issue": "Potentially incorrect category",
+      "severity": "medium",
+      "recommendation": "Review category assignment for MUID"
+    },
+    {
+      "cookieName": "CLID",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "clarity.ms",
+      "category": "analytics",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for CLID"
+    },
+    {
+      "cookieName": "_clsk",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "lsretail.com",
+      "category": "functionality",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for _clsk"
+    },
+    {
+      "cookieName": "IDE",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "doubleclick.net",
+      "category": "necessary",
+      "issue": "Potentially incorrect category",
+      "severity": "medium",
+      "recommendation": "Review category assignment for IDE"
+    },
+    {
+      "cookieName": "__Secure-ROLLOUT_TOKEN",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "youtube.com",
+      "category": "necessary",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for __Secure-ROLLOUT_TOKEN"
+    },
+    {
+      "cookieName": "VISITOR_PRIVACY_METADATA",
+      "reportedDomain": "www.lsretail.com",
+      "actualProvider": "youtube.com",
+      "category": "advertisement",
+      "issue": "Missing description",
+      "severity": "medium",
+      "recommendation": "Add comprehensive description for VISITOR_PRIVACY_METADATA"
+    }
+  ]
+}

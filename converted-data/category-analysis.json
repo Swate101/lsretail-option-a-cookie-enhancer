@@ -1,0 +1,114 @@
+{
+  "totalCookies": 54,
+  "categories": {
+    "1": {
+      "name": "Essential Cookies",
+      "count": 21,
+      "cookies": [
+        "__cf_bm",
+        "__cf_bm",
+        "__hs_do_not_track",
+        "__cf_bm",
+        "__cf_bm",
+        "__cf_bm",
+        "__cf_bm",
+        "__cf_bm",
+        "__cf_bm",
+        "MUID",
+        "__cf_bm",
+        "__cf_bm",
+        "__cf_bm",
+        "__hs_cookie_cat_pref",
+        "__cf_bm",
+        "NID",
+        "IDE",
+        "__Secure-ROLLOUT_TOKEN",
+        "__cf_bm",
+        "__cf_bm",
+        "__cf_bm"
+      ]
+    },
+    "2": {
+      "name": "Functional Cookies",
+      "count": 9,
+      "cookies": [
+        "sp_t",
+        "sp_landing",
+        "AnalyticsSyncHistory",
+        "_clck",
+        "SRM_B",
+        "_clsk",
+        "ARRAffinitySameSite",
+        "test_cookie",
+        "YSC"
+      ]
+    },
+    "3": {
+      "name": "Analytics Cookies",
+      "count": 10,
+      "cookies": [
+        "ar_debug",
+        "_ga",
+        "__hstc",
+        "li_sugr",
+        "_ga_CWBWGSSZTV",
+        "SM",
+        "hubspotutk",
+        "__hssrc",
+        "__hssc",
+        "CLID"
+      ]
+    },
+    "4": {
+      "name": "Marketing Cookies",
+      "count": 14,
+      "cookies": [
+        "MR",
+        "ANONCHK",
+        "bcookie",
+        "_fbp",
+        "_gcl_au",
+        "_rdt_uuid",
+        "lidc",
+        "MR",
+        "UserMatchHistory",
+        "bscookie",
+        "MUID",
+        "VISITOR_INFO1_LIVE",
+        "fr",
+        "VISITOR_PRIVACY_METADATA"
+      ]
+    }
+  },
+  "providers": {
+    "hscta.net": 1,
+    "hubspotvideo.com": 1,
+    "google-analytics.com": 1,
+    "spotify.com": 2,
+    "lsretail.com": 14,
+    "bing.com": 3,
+    "linkedin.com": 7,
+    "usemessages.com": 1,
+    "clarity.ms": 5,
+    "hs-analytics.net": 1,
+    "hs-banner.com": 1,
+    "hsadspixel.net": 1,
+    "hubspot.com": 1,
+    "hsappstatic.net": 1,
+    "hsforms.com": 1,
+    "hubspotusercontent-na1.net": 1,
+    "runevents.net": 1,
+    "doubleclick.net": 2,
+    "google.com": 1,
+    "youtube.com": 4,
+    "hsforms.net": 1,
+    "hubspot.net": 1,
+    "hubspotusercontent10.net": 1,
+    "facebook.com": 1
+  },
+  "fixes": {
+    "categoryNamingFixed": true,
+    "hubspotDataIntegrated": true,
+    "automationReady": true
+  }
+}

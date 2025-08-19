@@ -1,0 +1,847 @@
+{
+  "cookies": [
+    {
+      "name": "__cf_bm",
+      "provider": "hscta.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "hscta.net",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hubspotvideo.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "29 minutes",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": false,
+      "validationIssues": [],
+      "expiryStandardized": "30 minutes"
+    },
+    {
+      "name": "ar_debug",
+      "provider": "google-analytics.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Google Analytics debug mode cookie for testing and validating tracking implementations.",
+      "descriptionSource": "AI-generated",
+      "actualSource": "Google Analytics",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "sp_t",
+      "provider": "spotify.com",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Required to ensure the functionality of the integrated Spotify plugin...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Spotify",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "sp_landing",
+      "provider": "spotify.com",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Required to ensure the functionality of the integrated Spotify plugin...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Spotify",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "_ga",
+      "provider": "lsretail.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "399 days",
+      "description": "ID used to identify users",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Google Analytics",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "13 months"
+    },
+    {
+      "name": "__hs_do_not_track",
+      "provider": "lsretail.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "179 days",
+      "description": "Prevents the tracking code from sending any information to HubSpot",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "HubSpot Privacy",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "6 months"
+    },
+    {
+      "name": "MR",
+      "provider": "bing.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "7 days",
+      "description": "Used to collect information for analytics purposes.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Microsoft Bing",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "1 week"
+    },
+    {
+      "name": "__hstc",
+      "provider": "lsretail.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "179 days",
+      "description": "Analytics tracking cookie",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "HubSpot Analytics",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "6 months"
+    },
+    {
+      "name": "AnalyticsSyncHistory",
+      "provider": "linkedin.com",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "29 days",
+      "description": "Used to store information about the time a sync with the lms_analytics cookie took place...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "LinkedIn",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "1 month"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "usemessages.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "usemessages.com",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "li_sugr",
+      "provider": "linkedin.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "89 days",
+      "description": "Used to make a probabilistic match of a user's identity outside the Designated Countries",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "LinkedIn",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "3 months"
+    },
+    {
+      "name": "_ga_CWBWGSSZTV",
+      "provider": "lsretail.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "399 days",
+      "description": "Used to persist session state",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Google Analytics",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "13 months"
+    },
+    {
+      "name": "SM",
+      "provider": "clarity.ms",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Microsoft Clarity session identifier for user experience analytics and heatmap generation.",
+      "descriptionSource": "AI-generated",
+      "actualSource": "Microsoft Clarity",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hs-analytics.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": false,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "hubspotutk",
+      "provider": "lsretail.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "179 days",
+      "description": "Contains visitor's identity",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "HubSpot Analytics",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "6 months"
+    },
+    {
+      "name": "__hssrc",
+      "provider": "lsretail.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Used to determine if a session is a new session",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "HubSpot Analytics",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "ANONCHK",
+      "provider": "clarity.ms",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Used to store session ID for a users session to ensure that clicks from adverts...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Microsoft Clarity",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "bcookie",
+      "provider": "linkedin.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "365 days",
+      "description": "Used by LinkedIn to track the use of embedded services.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "LinkedIn",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "1 year"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hs-banner.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": false,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__hssc",
+      "provider": "lsretail.com",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "29 minutes",
+      "description": "Analytics session cookie",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "HubSpot Analytics",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "30 minutes"
+    },
+    {
+      "name": "_fbp",
+      "provider": "lsretail.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "89 days",
+      "description": "Facebook analytics cookie",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Facebook Pixel",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "3 months"
+    },
+    {
+      "name": "_gcl_au",
+      "provider": "lsretail.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "89 days",
+      "description": "Used by Google AdSense for experimenting with advertisement efficiency...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Google Ads",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "3 months"
+    },
+    {
+      "name": "_rdt_uuid",
+      "provider": "lsretail.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "This cookie is set by Reddit and is used for remarketing on reddit.com",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Reddit Pixel",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "linkedin.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "LinkedIn",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hsadspixel.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "hsadspixel.net",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hubspot.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "29 minutes",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": false,
+      "validationIssues": [],
+      "expiryStandardized": "30 minutes"
+    },
+    {
+      "name": "_clck",
+      "provider": "lsretail.com",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Microsoft Clarity click tracking cookie for user interaction analysis and website optimization.",
+      "descriptionSource": "AI-generated",
+      "actualSource": "Microsoft Clarity",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "SRM_B",
+      "provider": "bing.com",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Collected user data is specifically adapted to the user or device...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Microsoft Bing",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "MUID",
+      "provider": "clarity.ms",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Identifies unique web browsers visiting Microsoft sites...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Microsoft Clarity",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution",
+        "Suspicious category assignment"
+      ],
+      "domainCorrected": true,
+      "suggestedCategory": "analytics",
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hsappstatic.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "hsappstatic.net",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "lidc",
+      "provider": "linkedin.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "1 days",
+      "description": "Used by the social networking service, LinkedIn, for tracking the use of embedded services.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "LinkedIn",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "1 day"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hsforms.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "hsforms.com",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "MR",
+      "provider": "clarity.ms",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Used to collect information for analytics purposes.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Microsoft Clarity",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "UserMatchHistory",
+      "provider": "linkedin.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "29 days",
+      "description": "These cookies are set by LinkedIn for advertising purposes...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "LinkedIn",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "1 month"
+    },
+    {
+      "name": "bscookie",
+      "provider": "linkedin.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "364 days",
+      "description": "Used by LinkedIn to track the use of embedded services.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "LinkedIn",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "1 year"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "lsretail.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "29 minutes",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "30 minutes"
+    },
+    {
+      "name": "CLID",
+      "provider": "clarity.ms",
+      "category": "analytics",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Microsoft Clarity session ID for tracking user behavior and website performance metrics.",
+      "descriptionSource": "AI-generated",
+      "actualSource": "Microsoft Clarity",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "_clsk",
+      "provider": "lsretail.com",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Microsoft Clarity session key for maintaining user session state during analytics collection.",
+      "descriptionSource": "AI-generated",
+      "actualSource": "Microsoft Clarity",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "MUID",
+      "provider": "bing.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "390 days",
+      "description": "Identifies unique web browsers visiting Microsoft sites...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Microsoft Bing",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "13 months"
+    },
+    {
+      "name": "__hs_cookie_cat_pref",
+      "provider": "lsretail.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "The HubSpot Cookie Banner's consent preferences cookie.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "HubSpot Cookie Banner",
+      "domainAttributionCorrect": true,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hubspotusercontent-na1.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "29 minutes",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": false,
+      "validationIssues": [],
+      "expiryStandardized": "30 minutes"
+    },
+    {
+      "name": "ARRAffinitySameSite",
+      "provider": "runevents.net",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "When using Microsoft Azure as a hosting platform...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "runevents.net",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "test_cookie",
+      "provider": "doubleclick.net",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "14 minutes",
+      "description": "This cookie is set by DoubleClick (which is owned by Google)...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Google DoubleClick",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "15 minutes"
+    },
+    {
+      "name": "NID",
+      "provider": "google.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "183 days",
+      "description": "This cookies is used to collect website statistics...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "google.com",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "6 months"
+    },
+    {
+      "name": "VISITOR_INFO1_LIVE",
+      "provider": "youtube.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "179 days",
+      "description": "Tries to estimate the users' bandwidth on pages with integrated YouTube videos.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "YouTube",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "6 months"
+    },
+    {
+      "name": "IDE",
+      "provider": "doubleclick.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "399 days",
+      "description": "This cookie is used for targeting, analyzing and optimisation of ad campaigns...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Google DoubleClick",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution",
+        "Suspicious category assignment"
+      ],
+      "domainCorrected": true,
+      "suggestedCategory": "advertisement",
+      "expiryStandardized": "13 months"
+    },
+    {
+      "name": "__Secure-ROLLOUT_TOKEN",
+      "provider": "youtube.com",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "YouTube security token for progressive feature rollout and A/B testing.",
+      "descriptionSource": "AI-generated",
+      "actualSource": "YouTube",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hsforms.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "hsforms.net",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hubspot.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": false,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "__cf_bm",
+      "provider": "hubspotusercontent10.net",
+      "category": "necessary",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Cloudflare Bot Management",
+      "domainAttributionCorrect": false,
+      "validationIssues": [],
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "YSC",
+      "provider": "youtube.com",
+      "category": "functionality",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "Registers a unique ID to keep statistics of what videos from YouTube the user has seen.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "YouTube",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    },
+    {
+      "name": "fr",
+      "provider": "facebook.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "89 days",
+      "description": "Contains a unique browser and user ID, used for targeted advertising.",
+      "descriptionSource": "HubSpot scanner",
+      "actualSource": "Facebook",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "3 months"
+    },
+    {
+      "name": "VISITOR_PRIVACY_METADATA",
+      "provider": "youtube.com",
+      "category": "advertisement",
+      "domain": "www.lsretail.com",
+      "expiry": "session",
+      "description": "YouTube visitor privacy metadata for GDPR compliance and privacy preference management.",
+      "descriptionSource": "AI-generated",
+      "actualSource": "YouTube",
+      "domainAttributionCorrect": false,
+      "validationIssues": [
+        "Suspicious domain attribution"
+      ],
+      "domainCorrected": true,
+      "expiryStandardized": "Session"
+    }
+  ],
+  "validationIssues": [
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious category assignment",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious category assignment",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution",
+    "Suspicious domain attribution"
+  ],
+  "validatedAt": "2025-08-19T12:47:40.380Z"
+}

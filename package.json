@@ -1,0 +1,24 @@
+{
+  "name": "lsretail-option-a-cookie-enhancer",
+  "version": "1.0.0",
+  "description": "## Overview HubSpot cookie banner enhancement with individual \"Learn More\" links for each cookie category.",
+  "main": "test-cookie-banner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://swate101: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@github.com/Swate101/lsretail-option-a-cookie-enhancer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swate101/lsretail-option-a-cookie-enhancer/issues"
+  },
+  "homepage": "https://github.com/Swate101/lsretail-option-a-cookie-enhancer#readme",
+  "dependencies": {
+    "playwright": "^1.54.2",
+    "puppeteer": "^24.16.2"
+  }
+}

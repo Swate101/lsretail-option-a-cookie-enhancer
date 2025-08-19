@@ -228,15 +228,32 @@
 }
 
 /* ================================
-   EXPANDABLE CATEGORY DETAILS
+   EXPANDABLE CATEGORY DETAILS - ENHANCED ANIMATIONS
    ================================ */
 
 .ls-category-details {
     max-height: 0;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.15);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.ls-category-details.expanded {
+    max-height: 600px;
+    opacity: 1;
+    transform: translateY(0);
+    border-top-color: rgba(246, 195, 112, 0.2);
+}
+
+/* Smooth animation for "SHOW LESS" state */
+.ls-category-details.collapsing {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 .ls-category-description {
@@ -251,7 +268,7 @@
 }
 
 /* ================================
-   COOKIES LIST STYLING
+   COOKIES LIST STYLING - ENHANCED WITH SCROLLABLE CONTAINERS
    ================================ */
 
 .ls-cookies-list {
@@ -265,70 +282,153 @@
     color: #f6c370;
     text-transform: uppercase;
     letter-spacing: 0.3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(246, 195, 112, 0.2);
+}
+
+.ls-cookie-count {
+    background: rgba(246, 195, 112, 0.2);
+    color: #f6c370;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
 }
 
 .ls-cookies-list ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 8px;
 }
 
-.ls-cookie-item {
-    margin-bottom: 12px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Custom scrollbar styling */
+.ls-cookies-list ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ls-cookies-list ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 4px;
+}
+
+.ls-cookies-list ul::-webkit-scrollbar-thumb {
+    background: rgba(246, 195, 112, 0.3);
+    border-radius: 4px;
+}
+
+.ls-cookies-list ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(246, 195, 112, 0.5);
+}
+
+/* Firefox scrollbar */
+.ls-cookies-list ul {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(246, 195, 112, 0.3) rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced cookie item with table-like structure */
+.ls-cookie-item {
+    margin-bottom: 8px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .ls-cookie-item:hover {
-    border-color: rgba(246, 195, 112, 0.2);
+    border-color: rgba(246, 195, 112, 0.3);
     background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(246, 195, 112, 0.1);
 }
 
 .ls-cookie-item:last-child {
     margin-bottom: 0;
 }
 
+/* Table-like header structure */
 .ls-cookie-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     align-items: center;
-    margin-bottom: 6px;
+    padding: 10px 12px 8px 12px;
+    background: rgba(246, 195, 112, 0.05);
+    border-bottom: 1px solid rgba(246, 195, 112, 0.1);
+    gap: 12px;
 }
 
-.ls-cookie-header strong {
+.ls-cookie-name {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     color: #ffffff;
     text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ls-cookie-provider {
+    font-size: 10px;
+    color: rgba(246, 195, 112, 0.8);
+    background: rgba(246, 195, 112, 0.15);
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
     letter-spacing: 0.3px;
+    white-space: nowrap;
 }
 
 .ls-cookie-duration {
     background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
     color: #361d5c;
     font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(246, 195, 112, 0.2);
+}
+
+/* Cookie details section */
+.ls-cookie-details {
+    padding: 10px 12px;
+}
+
+.ls-cookie-purpose {
+    font-size: 11px;
+    color: #f6c370;
+    margin-bottom: 6px;
     font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 10px;
     text-transform: uppercase;
     letter-spacing: 0.3px;
 }
 
-.ls-cookie-purpose {
-    font-size: 12px;
-    color: #f6c370;
-    margin-bottom: 4px;
-    font-weight: 500;
-}
-
 .ls-cookie-description {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
     margin: 0;
+    padding: 8px 0;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 8px 10px;
+    border-radius: 4px;
+    border-left: 3px solid rgba(246, 195, 112, 0.3);
 }
 
 /* ================================
@@ -536,6 +636,32 @@
     .ls-cookies-list {
         padding-left: 12px;
         padding-right: 12px;
+    }
+    
+    /* Mobile cookie item adjustments */
+    .ls-cookie-header {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+    
+    .ls-cookie-name {
+        font-size: 12px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .ls-cookie-provider,
+    .ls-cookie-duration {
+        justify-self: center;
+    }
+    
+    .ls-cookie-details {
+        padding: 8px 10px;
+    }
+    
+    .ls-cookies-list ul {
+        max-height: 250px;
     }
 }
 

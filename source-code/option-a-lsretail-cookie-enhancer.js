@@ -1040,7 +1040,12 @@
             const categoryCookies = this.getCookiesForCategory(categoryKey);
             
             if (categoryCookies.length > 0) {
-                container.innerHTML = '<h4>Cookies in this category:</h4>';
+                container.innerHTML = `
+                    <h4>
+                        Cookies in this category: 
+                        <span class="ls-cookie-count">${categoryCookies.length} cookies</span>
+                    </h4>
+                `;
                 
                 const list = document.createElement('ul');
                 categoryCookies.forEach(cookie => {
@@ -1048,11 +1053,14 @@
                     item.className = 'ls-cookie-item';
                     item.innerHTML = `
                         <div class="ls-cookie-header">
-                            <strong>${cookie.cookie_name}</strong>
-                            <span class="ls-cookie-duration">${cookie.duration}</span>
+                            <div class="ls-cookie-name">${cookie.cookie_name}</div>
+                            <div class="ls-cookie-provider">${cookie.provider || 'Unknown'}</div>
+                            <div class="ls-cookie-duration">${cookie.duration}</div>
                         </div>
-                        <div class="ls-cookie-purpose">${cookie.purpose}</div>
-                        <div class="ls-cookie-description">${cookie.description}</div>
+                        <div class="ls-cookie-details">
+                            <div class="ls-cookie-purpose">${cookie.purpose}</div>
+                            <div class="ls-cookie-description">${cookie.description}</div>
+                        </div>
                     `;
                     list.appendChild(item);
                 });
@@ -1103,39 +1111,32 @@
             const isExpanded = learnMoreBtn.getAttribute('aria-expanded') === 'true';
 
             if (isExpanded) {
-                // Collapse
-                details.style.transition = `all ${CONFIG.animations.duration}ms ${CONFIG.animations.easing}`;
-                details.style.maxHeight = '0px';
-                details.style.opacity = '0';
-                details.style.paddingTop = '0px';
-                details.style.paddingBottom = '0px';
+                // Collapse with enhanced CSS animation
+                details.classList.remove('expanded');
+                details.classList.add('collapsing');
                 
-                setTimeout(() => {
-                    details.style.display = 'none';
-                }, CONFIG.animations.duration);
-
+                // Change button state immediately for better UX
                 learnMoreBtn.textContent = 'Learn More';
                 learnMoreBtn.setAttribute('aria-expanded', 'false');
+                
+                // Remove collapsing class after animation
+                setTimeout(() => {
+                    details.classList.remove('collapsing');
+                    details.style.display = 'none';
+                }, 300);
+
                 Utils.log('Collapsed category:', category.label);
             } else {
-                // Expand
+                // Expand with enhanced CSS animation
                 details.style.display = 'block';
-                details.style.maxHeight = '0px';
-                details.style.opacity = '0';
-                details.style.paddingTop = '0px';
-                details.style.paddingBottom = '0px';
+                details.classList.remove('collapsing');
                 
-                // Get natural height
-                const naturalHeight = details.scrollHeight;
-                
-                setTimeout(() => {
-                    details.style.transition = `all ${CONFIG.animations.duration}ms ${CONFIG.animations.easing}`;
-                    details.style.maxHeight = naturalHeight + 'px';
-                    details.style.opacity = '1';
-                    details.style.paddingTop = '15px';
-                    details.style.paddingBottom = '15px';
-                }, 10);
+                // Use requestAnimationFrame for smooth animation
+                requestAnimationFrame(() => {
+                    details.classList.add('expanded');
+                });
 
+                // Change button state
                 learnMoreBtn.textContent = 'Show Less';
                 learnMoreBtn.setAttribute('aria-expanded', 'true');
                 Utils.log('Expanded category:', category.label);

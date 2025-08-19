@@ -236,6 +236,17 @@
             background: #361d5c;
         }
         
+        .always-active-text {
+            color: #4caf50;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border: 1px solid #4caf50;
+            border-radius: 4px;
+            background: rgba(76, 175, 80, 0.1);
+        }
+        
         .category-details {
             max-height: 0;
             overflow: hidden;
@@ -373,12 +384,11 @@
                 <div class="category">
                     <div class="category-item">
                         <div class="category-info">
-                            <span class="category-icon">🔒</span>
                             <span class="category-label">Essential Cookies</span>
                         </div>
                         <div class="category-controls">
                             <button class="learn-more-btn" onclick="toggleDetails('essential')">Learn More</button>
-                            <div class="toggle active" title="Required - Cannot be disabled"></div>
+                            <div class="always-active-text">Always Active</div>
                         </div>
                     </div>
                     <div id="essential-details" class="category-details">
@@ -398,11 +408,38 @@
                     </div>
                 </div>
                 
+                <!-- Functional Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-label">Functional Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('functional')">Learn More</button>
+                            <div class="toggle" onclick="toggleConsent('functional', this)"></div>
+                        </div>
+                    </div>
+                    <div id="functional-details" class="category-details">
+                        <p><strong>Enable enhanced functionality and personalization features.</strong></p>
+                        <div class="cookie-list">
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hs_language_pref</div>
+                                <div class="cookie-purpose">Language preferences</div>
+                                <div class="cookie-description">Remembers your language selection for a personalized experience.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hs_initial_opt_in</div>
+                                <div class="cookie-purpose">Personalization settings</div>
+                                <div class="cookie-description">Stores your preferences for website features and content display.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Analytics Cookies -->
                 <div class="category">
                     <div class="category-item">
                         <div class="category-info">
-                            <span class="category-icon">📊</span>
                             <span class="category-label">Analytics Cookies</span>
                         </div>
                         <div class="category-controls">
@@ -431,7 +468,6 @@
                 <div class="category">
                     <div class="category-item">
                         <div class="category-info">
-                            <span class="category-icon">🎯</span>
                             <span class="category-label">Marketing Cookies</span>
                         </div>
                         <div class="category-controls">
@@ -457,7 +493,7 @@
                 </div>
                 
                 <div class="action-buttons">
-                    <button class="action-btn save-btn" onclick="savePreferences()">Save Preferences</button>
+                    <button class="action-btn save-btn" onclick="savePreferences()">Confirm My Choices</button>
                     <button class="action-btn accept-all-btn" onclick="acceptAll()">Accept All</button>
                     <button class="action-btn reject-all-btn" onclick="rejectAll()">Reject All Optional</button>
                 </div>
@@ -475,6 +511,7 @@
         // Demo State
         let consentState = {
             essential: true,
+            functional: false,
             analytics: false,
             marketing: false
         };
@@ -494,7 +531,7 @@
         
         function resetDemo() {
             hideBanner();
-            consentState = { essential: true, analytics: false, marketing: false };
+            consentState = { essential: true, functional: false, analytics: false, marketing: false };
             updateToggles();
             // Close all expanded details
             document.querySelectorAll('.category-details').forEach(detail => {
@@ -516,7 +553,7 @@
                 settingsBtn.textContent = 'Manage Cookie Preferences';
             } else {
                 categories.classList.add('show');
-                settingsBtn.textContent = 'Hide Cookie Preferences';
+                settingsBtn.textContent = 'Close Preferences Panel';
             }
         }
         
@@ -559,6 +596,7 @@
         }
         
         function acceptAll() {
+            consentState.functional = true;
             consentState.analytics = true;
             consentState.marketing = true;
             updateToggles();
@@ -567,6 +605,7 @@
         }
         
         function rejectAll() {
+            consentState.functional = false;
             consentState.analytics = false;
             consentState.marketing = false;
             updateToggles();
@@ -575,6 +614,7 @@
         }
         
         function declineAll() {
+            consentState.functional = false;
             consentState.analytics = false;
             consentState.marketing = false;
             showSuccessMessage('All optional cookies declined!');

@@ -249,63 +249,549 @@
 
         getLSRetailMockData: function() {
             return {
-                rows: [
+          "rows": [
                     {
-                        values: {
-                            category_key: '1',
-                            cookie_name: '_hs_session',
-                            purpose: 'LS Retail session management',
-                            duration: 'Session',
-                            description: 'Essential for secure access to LS Central and maintaining your dashboard session'
-                        }
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
                     },
                     {
-                        values: {
-                            category_key: '1',
-                            cookie_name: '__hs_opt_out',
-                            purpose: 'Privacy preferences storage',
-                            duration: '13 months',
-                            description: 'Remembers your cookie consent choices for LS Retail services'
-                        }
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "30 minutes",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
                     },
                     {
-                        values: {
-                            category_key: '2',
-                            cookie_name: '_ga',
-                            purpose: 'Website analytics',
-                            duration: '2 years',
-                            description: 'Helps us understand how retail businesses use our website and solutions'
-                        }
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "ar_debug",
+                                        "purpose": "Google Analytics (Debug) - Website analytics",
+                                        "duration": "Session",
+                                        "description": "Google Analytics debug mode cookie for testing and validating tracking implementations.",
+                                        "provider": "Google Analytics (Debug)"
+                              }
                     },
                     {
-                        values: {
-                            category_key: '2',
-                            cookie_name: '__hstc',
-                            purpose: 'Visitor behavior tracking',
-                            duration: '13 months',
-                            description: 'Tracks visitor sessions to optimize the LS Central user experience'
-                        }
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "sp_t",
+                                        "purpose": "Spotify Integration - Enhanced features",
+                                        "duration": "Session",
+                                        "description": "Required to ensure the functionality of the integrated Spotify plugin...",
+                                        "provider": "Spotify Integration"
+                              }
                     },
                     {
-                        values: {
-                            category_key: '3',
-                            cookie_name: '_fbp',
-                            purpose: 'Marketing campaign optimization',
-                            duration: '3 months',
-                            description: 'Enables targeted marketing about unified commerce solutions for your industry'
-                        }
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "sp_landing",
+                                        "purpose": "Spotify Integration - Enhanced features",
+                                        "duration": "Session",
+                                        "description": "Required to ensure the functionality of the integrated Spotify plugin...",
+                                        "provider": "Spotify Integration"
+                              }
                     },
                     {
-                        values: {
-                            category_key: '3',
-                            cookie_name: '__hs_cta_track',
-                            purpose: 'Content personalization',
-                            duration: '6 months',
-                            description: 'Personalizes content about LS Central features based on your business needs'
-                        }
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "_ga",
+                                        "purpose": "Google Analytics - Website analytics",
+                                        "duration": "13 months",
+                                        "description": "ID used to identify users",
+                                        "provider": "Google Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__hs_do_not_track",
+                                        "purpose": "HubSpot Privacy - Essential functionality",
+                                        "duration": "6 months",
+                                        "description": "Prevents the tracking code from sending any information to HubSpot",
+                                        "provider": "HubSpot Privacy"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "MR",
+                                        "purpose": "Microsoft Advertising - Marketing optimization",
+                                        "duration": "1 week",
+                                        "description": "Used to collect information for analytics purposes.",
+                                        "provider": "Microsoft Advertising"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "__hstc",
+                                        "purpose": "HubSpot Analytics - Website analytics",
+                                        "duration": "6 months",
+                                        "description": "Analytics tracking cookie",
+                                        "provider": "HubSpot Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "AnalyticsSyncHistory",
+                                        "purpose": "LinkedIn Analytics - Enhanced features",
+                                        "duration": "1 month",
+                                        "description": "Used to store information about the time a sync with the lms_analytics cookie took place...",
+                                        "provider": "LinkedIn Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "li_sugr",
+                                        "purpose": "LinkedIn Analytics - Website analytics",
+                                        "duration": "3 months",
+                                        "description": "Used to make a probabilistic match of a user's identity outside the Designated Countries",
+                                        "provider": "LinkedIn Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "_ga_CWBWGSSZTV",
+                                        "purpose": "Google Analytics - Website analytics",
+                                        "duration": "13 months",
+                                        "description": "Used to persist session state",
+                                        "provider": "Google Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "SM",
+                                        "purpose": "Microsoft Clarity - Website analytics",
+                                        "duration": "Session",
+                                        "description": "Microsoft Clarity session identifier for user experience analytics and heatmap generation.",
+                                        "provider": "Microsoft Clarity"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "hubspotutk",
+                                        "purpose": "HubSpot Analytics - Website analytics",
+                                        "duration": "6 months",
+                                        "description": "Contains visitor's identity",
+                                        "provider": "HubSpot Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "__hssrc",
+                                        "purpose": "HubSpot Analytics - Website analytics",
+                                        "duration": "Session",
+                                        "description": "Used to determine if a session is a new session",
+                                        "provider": "HubSpot Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "ANONCHK",
+                                        "purpose": "Microsoft Bing Ads - Marketing optimization",
+                                        "duration": "Session",
+                                        "description": "Used to store session ID for a users session to ensure that clicks from adverts...",
+                                        "provider": "Microsoft Bing Ads"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "bcookie",
+                                        "purpose": "LinkedIn Analytics - Marketing optimization",
+                                        "duration": "1 year",
+                                        "description": "Used by LinkedIn to track the use of embedded services.",
+                                        "provider": "LinkedIn Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "__hssc",
+                                        "purpose": "HubSpot Analytics - Website analytics",
+                                        "duration": "30 minutes",
+                                        "description": "Analytics session cookie",
+                                        "provider": "HubSpot Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "_fbp",
+                                        "purpose": "Facebook Pixel - Marketing optimization",
+                                        "duration": "3 months",
+                                        "description": "Facebook analytics cookie",
+                                        "provider": "Facebook Pixel"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "_gcl_au",
+                                        "purpose": "Google Ads - Marketing optimization",
+                                        "duration": "3 months",
+                                        "description": "Used by Google AdSense for experimenting with advertisement efficiency...",
+                                        "provider": "Google Ads"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "_rdt_uuid",
+                                        "purpose": "Reddit Pixel - Marketing optimization",
+                                        "duration": "Session",
+                                        "description": "This cookie is set by Reddit and is used for remarketing on reddit.com",
+                                        "provider": "Reddit Pixel"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "30 minutes",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "_clck",
+                                        "purpose": "Microsoft Clarity - Enhanced features",
+                                        "duration": "Session",
+                                        "description": "Microsoft Clarity click tracking cookie for user interaction analysis and website optimization.",
+                                        "provider": "Microsoft Clarity"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "SRM_B",
+                                        "purpose": "Microsoft Bing - Enhanced features",
+                                        "duration": "Session",
+                                        "description": "Collected user data is specifically adapted to the user or device...",
+                                        "provider": "Microsoft Bing"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "MUID",
+                                        "purpose": "Microsoft Advertising - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Identifies unique web browsers visiting Microsoft sites...",
+                                        "provider": "Microsoft Advertising"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "lidc",
+                                        "purpose": "LinkedIn Analytics - Marketing optimization",
+                                        "duration": "1 day",
+                                        "description": "Used by the social networking service, LinkedIn, for tracking the use of embedded services.",
+                                        "provider": "LinkedIn Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "MR",
+                                        "purpose": "Microsoft Advertising - Marketing optimization",
+                                        "duration": "Session",
+                                        "description": "Used to collect information for analytics purposes.",
+                                        "provider": "Microsoft Advertising"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "UserMatchHistory",
+                                        "purpose": "LinkedIn Advertising - Marketing optimization",
+                                        "duration": "1 month",
+                                        "description": "These cookies are set by LinkedIn for advertising purposes...",
+                                        "provider": "LinkedIn Advertising"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "bscookie",
+                                        "purpose": "LinkedIn Analytics - Marketing optimization",
+                                        "duration": "1 year",
+                                        "description": "Used by LinkedIn to track the use of embedded services.",
+                                        "provider": "LinkedIn Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "30 minutes",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "3",
+                                        "cookie_name": "CLID",
+                                        "purpose": "Microsoft Clarity - Website analytics",
+                                        "duration": "Session",
+                                        "description": "Microsoft Clarity session ID for tracking user behavior and website performance metrics.",
+                                        "provider": "Microsoft Clarity"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "_clsk",
+                                        "purpose": "Microsoft Clarity - Enhanced features",
+                                        "duration": "Session",
+                                        "description": "Microsoft Clarity session key for maintaining user session state during analytics collection.",
+                                        "provider": "Microsoft Clarity"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "MUID",
+                                        "purpose": "Microsoft Advertising - Marketing optimization",
+                                        "duration": "13 months",
+                                        "description": "Identifies unique web browsers visiting Microsoft sites...",
+                                        "provider": "Microsoft Advertising"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__hs_cookie_cat_pref",
+                                        "purpose": "HubSpot Cookie Banner - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "The HubSpot Cookie Banner's consent preferences cookie.",
+                                        "provider": "HubSpot Cookie Banner"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "30 minutes",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "ARRAffinitySameSite",
+                                        "purpose": "Azure Load Balancer - Enhanced features",
+                                        "duration": "Session",
+                                        "description": "When using Microsoft Azure as a hosting platform...",
+                                        "provider": "Azure Load Balancer"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "test_cookie",
+                                        "purpose": "Google DoubleClick - Enhanced features",
+                                        "duration": "15 minutes",
+                                        "description": "This cookie is set by DoubleClick (which is owned by Google)...",
+                                        "provider": "Google DoubleClick"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "NID",
+                                        "purpose": "Google Services - Essential functionality",
+                                        "duration": "6 months",
+                                        "description": "This cookies is used to collect website statistics...",
+                                        "provider": "Google Services"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "VISITOR_INFO1_LIVE",
+                                        "purpose": "YouTube Analytics - Marketing optimization",
+                                        "duration": "6 months",
+                                        "description": "Tries to estimate the users' bandwidth on pages with integrated YouTube videos.",
+                                        "provider": "YouTube Analytics"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "IDE",
+                                        "purpose": "Google DoubleClick - Essential functionality",
+                                        "duration": "13 months",
+                                        "description": "This cookie is used for targeting, analyzing and optimisation of ad campaigns...",
+                                        "provider": "Google DoubleClick"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__Secure-ROLLOUT_TOKEN",
+                                        "purpose": "YouTube Security - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "YouTube security token for progressive feature rollout and A/B testing.",
+                                        "provider": "YouTube Security"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "1",
+                                        "cookie_name": "__cf_bm",
+                                        "purpose": "Cloudflare Bot Management - Essential functionality",
+                                        "duration": "Session",
+                                        "description": "Cloud flare's bot products identify and mitigate automated traffic...",
+                                        "provider": "Cloudflare Bot Management"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "2",
+                                        "cookie_name": "YSC",
+                                        "purpose": "YouTube Session - Enhanced features",
+                                        "duration": "Session",
+                                        "description": "Registers a unique ID to keep statistics of what videos from YouTube the user has seen.",
+                                        "provider": "YouTube Session"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "fr",
+                                        "purpose": "Facebook Advertising - Marketing optimization",
+                                        "duration": "3 months",
+                                        "description": "Contains a unique browser and user ID, used for targeted advertising.",
+                                        "provider": "Facebook Advertising"
+                              }
+                    },
+                    {
+                              "values": {
+                                        "category_key": "4",
+                                        "cookie_name": "VISITOR_PRIVACY_METADATA",
+                                        "purpose": "YouTube Privacy - Marketing optimization",
+                                        "duration": "Session",
+                                        "description": "YouTube visitor privacy metadata for GDPR compliance and privacy preference management.",
+                                        "provider": "YouTube Privacy"
+                              }
                     }
-                ]
-            };
+          ]
+};
         }
     };
 

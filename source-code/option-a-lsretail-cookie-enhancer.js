@@ -34,24 +34,28 @@
                 id: 'essential',
                 label: 'Essential Cookies',
                 description: 'These cookies are necessary for our LS Retail platform to function properly and cannot be disabled.',
-                required: true,
-                icon: '🔒'
+                required: true
             },
             {
                 key: '2', 
+                id: 'functional',
+                label: 'Functional Cookies',
+                description: 'Enable enhanced functionality and personalization features for improved user experience.',
+                required: false
+            },
+            {
+                key: '3', 
                 id: 'analytics',
                 label: 'Analytics Cookies',
                 description: 'Help us understand how businesses use our retail solutions to improve our products.',
-                required: false,
-                icon: '📊'
+                required: false
             },
             {
-                key: '3',
+                key: '4',
                 id: 'marketing',
                 label: 'Marketing Cookies', 
                 description: 'Enable targeted content about our unified commerce solutions for your business type.',
-                required: false,
-                icon: '🎯'
+                required: false
             }
         ],
         
@@ -146,8 +150,9 @@
             window._hsp = window._hsp || [];
             window._hsp.mockConsent = Utils.parseConsentCookie() || {
                 '1': true,  // Essential always enabled
-                '2': false,
-                '3': false
+                '2': false, // Functional
+                '3': false, // Analytics
+                '4': false  // Marketing
             };
 
             window._hsp.push = function(args) {
@@ -262,6 +267,24 @@
                     {
                         values: {
                             category_key: '2',
+                            cookie_name: '__hs_lang_pref',
+                            purpose: 'Language preference storage',
+                            duration: '1 year',
+                            description: 'Remembers your preferred language settings for LS Central interfaces'
+                        }
+                    },
+                    {
+                        values: {
+                            category_key: '2',
+                            cookie_name: '__hs_user_pref',
+                            purpose: 'User interface customization',
+                            duration: '6 months',
+                            description: 'Stores dashboard layout preferences and customization settings for your LS Central experience'
+                        }
+                    },
+                    {
+                        values: {
+                            category_key: '3',
                             cookie_name: '_ga',
                             purpose: 'Website analytics',
                             duration: '2 years',
@@ -270,7 +293,7 @@
                     },
                     {
                         values: {
-                            category_key: '2',
+                            category_key: '3',
                             cookie_name: '__hstc',
                             purpose: 'Visitor behavior tracking',
                             duration: '13 months',
@@ -279,7 +302,7 @@
                     },
                     {
                         values: {
-                            category_key: '3',
+                            category_key: '4',
                             cookie_name: '_fbp',
                             purpose: 'Marketing campaign optimization',
                             duration: '3 months',
@@ -288,7 +311,7 @@
                     },
                     {
                         values: {
-                            category_key: '3',
+                            category_key: '4',
                             cookie_name: '__hs_cta_track',
                             purpose: 'Content personalization',
                             duration: '6 months',
@@ -431,7 +454,7 @@
 
             // Update settings button
             const settingsBtn = this.banner.querySelector(CONFIG.selectors.settingsBtn);
-            settingsBtn.textContent = 'Hide Cookie Preferences';
+            settingsBtn.textContent = 'Close Preferences Panel';
             settingsBtn.setAttribute('aria-expanded', 'true');
         },
 
@@ -497,20 +520,21 @@
             header.className = 'ls-category-header';
             header.innerHTML = `
                 <div class="ls-category-info">
-                    <span class="ls-category-icon">${category.icon}</span>
                     <span class="ls-category-label">${category.label}</span>
                 </div>
                 <div class="ls-category-controls">
                     <button class="ls-learn-more-btn" data-category="${category.key}" aria-expanded="false">
                         Learn More
                     </button>
-                    <label class="ls-toggle" aria-label="Enable ${category.label}">
-                        <input type="checkbox" 
-                               class="ls-toggle-input" 
-                               data-category="${category.key}"
-                               ${category.required ? 'checked disabled' : ''}>
-                        <span class="ls-toggle-slider"></span>
-                    </label>
+                    ${category.required ? 
+                        '<span class="ls-always-active">Always Active</span>' : 
+                        `<label class="ls-toggle" aria-label="Enable ${category.label}">
+                            <input type="checkbox" 
+                                   class="ls-toggle-input" 
+                                   data-category="${category.key}">
+                            <span class="ls-toggle-slider"></span>
+                        </label>`
+                    }
                 </div>
             `;
             categoryEl.appendChild(header);
@@ -665,7 +689,7 @@
             
             container.innerHTML = `
                 <button class="ls-save-btn" id="ls-save-preferences">
-                    Save Preferences
+                    Confirm My Choices
                 </button>
                 <button class="ls-accept-all-btn" id="ls-accept-all">
                     Accept All

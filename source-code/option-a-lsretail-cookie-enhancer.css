@@ -83,11 +83,7 @@
     flex: 1;
 }
 
-.ls-category-icon {
-    font-size: 18px;
-    width: 24px;
-    text-align: center;
-}
+
 
 .ls-category-label {
     font-size: 16px;
@@ -212,6 +208,23 @@
 
 .ls-toggle-input:disabled + .ls-toggle-slider::before {
     background: #cccccc;
+}
+
+/* ================================
+   ALWAYS ACTIVE TEXT
+   ================================ */
+
+.ls-always-active {
+    color: #f6c370;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    background: rgba(246, 195, 112, 0.15);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(246, 195, 112, 0.3);
+    white-space: nowrap;
 }
 
 /* ================================

@@ -27,7 +27,7 @@
             declineBtn: '#hs-eu-decline-button'
         },
         
-        // Cookie categories for Option A
+        // Cookie categories for Option A (aligned with HubSpot categories)
         categories: [
             {
                 key: '1',
@@ -39,6 +39,14 @@
             },
             {
                 key: '2', 
+                id: 'functional',
+                label: 'Functional Cookies',
+                description: 'Enable enhanced functionality and personalization features for improved user experience.',
+                required: false,
+                icon: '⚙️'
+            },
+            {
+                key: '3',
                 id: 'analytics',
                 label: 'Analytics Cookies',
                 description: 'Help us understand how businesses use our retail solutions to improve our products.',
@@ -46,7 +54,7 @@
                 icon: '📊'
             },
             {
-                key: '3',
+                key: '4',
                 id: 'marketing',
                 label: 'Marketing Cookies', 
                 description: 'Enable targeted content about our unified commerce solutions for your business type.',
@@ -146,8 +154,9 @@
             window._hsp = window._hsp || [];
             window._hsp.mockConsent = Utils.parseConsentCookie() || {
                 '1': true,  // Essential always enabled
-                '2': false,
-                '3': false
+                '2': false, // Functional
+                '3': false, // Analytics
+                '4': false  // Marketing
             };
 
             window._hsp.push = function(args) {

@@ -11,7 +11,7 @@
     // Configuration based on live analysis
     const CONFIG = {
         portalId: '491011', // LS Retail's actual portal ID
-        hubdbTableId: 'YOUR_HUBDB_TABLE_ID', // Replace with HubDB table ID
+        hubdbTableId: '130537251', // LS Retail Cookie Catalog HubDB table
         apiEndpoint: '/hubdb/api/v2/tables',
         cacheKey: 'lsretail_option_a_cookies',
         cacheDuration: 86400000, // 24 hours

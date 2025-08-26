@@ -1,7 +1,8 @@
-# LS Retail Cookie Banner Enhancer - Option A
+# LS Retail Cookie Enhancer - Option A
 
-## Overview
-HubSpot cookie banner enhancement with individual "Learn More" links for each cookie category.
+**Individual "Learn More" Links with Category Injection** 
+
+Single-file solution with HubDB integration and embedded fallback for LS Retail's HubSpot cookie banner enhancement.
 
 ## Deliverables
 
@@ -35,12 +36,36 @@ option-a-lsretail-cookie-enhancer.min.css
 ```html
 <!-- Add before </body> tag -->
 <script src="./js/security-fixes.min.js" async></script>
-<script src="./js/option-a-lsretail-cookie-enhancer.min.js" async></script>
+<script src="./js/option-a-lsretail-cookie-enhancer.v1.0.1.min.js" async></script>
 <link rel="stylesheet" href="./css/option-a-lsretail-cookie-enhancer.min.css">
 ```
 
 ### Step 3: Setup HubDB
 Run `database-setup/hubdb-table-setup.sql` in HubSpot HubDB
+
+## Verification & QA
+
+### Real-Time Verification
+The cookie enhancer includes built-in verification for QA teams:
+- **Verify Mode**: Add `?verify=true` to any page with the banner
+- **Source Display**: Shows real-time data source (HubDB with table ID or fallback)
+- **Cache Status**: Displays current cache version for debugging
+- **Timeout Monitoring**: 2-second timeout with automatic fallback
+
+### Quality Assurance Checklist
+✓ **HubDB Integration**: Endpoint locked to `state=PUBLISHED` rows only  
+✓ **Fallback System**: Automatic fallback to 54 embedded cookies if HubDB unavailable  
+✓ **CORS Handling**: Graceful error handling for cross-origin restrictions  
+✓ **Performance**: 2-second timeout prevents hanging requests  
+✓ **Cache Control**: Date-based versioning for easy cache invalidation  
+✓ **Production Ready**: Versioned files with proper naming convention
+
+### Testing Scenarios
+1. **Normal Operation**: HubDB returns data successfully
+2. **HubDB Timeout**: 2+ second response triggers fallback
+3. **CORS Errors**: Cross-origin restrictions handled gracefully
+4. **Network Issues**: Any fetch failure uses embedded fallback
+5. **Cache Validation**: Verify mode shows current data source
 
 ## Features Implemented
 
@@ -73,7 +98,7 @@ Tested and working on:
 ## Files Structure
 ```
 ├── production-files/
-│   ├── option-a-lsretail-cookie-enhancer.min.js
+│   ├── option-a-lsretail-cookie-enhancer.v1.0.1.min.js
 │   ├── security-fixes.min.js
 │   └── option-a-lsretail-cookie-enhancer.min.css
 ├── source-code/

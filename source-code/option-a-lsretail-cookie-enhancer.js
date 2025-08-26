@@ -13,7 +13,7 @@
         portalId: '491011', // LS Retail's actual portal ID
         hubdbTableId: '130537251', // LS Retail Cookie Catalog HubDB table
         apiEndpoint: '/hubdb/api/v2/tables',
-        cacheKey: 'lsretail_option_a_cookies',
+        cacheKey: 'lsretail_option_a_cookies_130537251', // Include table ID for cache invalidation
         cacheDuration: 86400000, // 24 hours
         
         // Exact selectors from live analysis
@@ -73,7 +73,9 @@
             easing: 'ease-in-out'
         },
         
-        debug: true
+        // Debug modes
+        debug: new URLSearchParams(window.location.search).has('lsr_debug'),
+        verifyMode: new URLSearchParams(window.location.search).has('lsr_verify')
     };
 
     // Utility functions
@@ -186,35 +188,85 @@
 
     // HubDB Integration for cookie details
     const HubDBIntegration = {
+        dataSource: 'unknown', // Track data source for verify mode
+        
         async loadData() {
-            // Check cache first
-            const cached = this.getCachedData();
+            // Check cache first (skip if debug mode)
+            const cached = !CONFIG.debug ? this.getCachedData() : null;
             if (cached) {
-                Utils.log('Using cached cookie data');
+                this.dataSource = `HubDB (${cached.rows?.length || 0}) [cached]`;
+                Utils.log('Using cached cookie data:', cached.rows?.length || 0, 'rows');
                 return cached;
             }
 
             // Try real HubDB if configured
-            if (CONFIG.portalId !== 'YOUR_PORTAL_ID' && CONFIG.hubdbTableId !== 'YOUR_HUBDB_TABLE_ID') {
-                try {
-                    const response = await fetch(
-                        `${CONFIG.apiEndpoint}/${CONFIG.hubdbTableId}/rows?portalId=${CONFIG.portalId}`,
-                        { headers: { 'Accept': 'application/json' } }
-                    );
-                    
-                    if (response.ok) {
-                        const data = await response.json();
-                        this.setCachedData(data);
-                        Utils.log('Loaded cookie data from HubDB');
-                        return data;
-                    }
-                } catch (error) {
-                    Utils.error('Failed to load HubDB data:', error);
+            if (CONFIG.hubdbTableId && CONFIG.hubdbTableId !== 'YOUR_HUBDB_TABLE_ID') {
+                const hubdbData = await this.tryHubDB();
+                if (hubdbData) {
+                    this.dataSource = `HubDB (${hubdbData.rows?.length || 0})`;
+                    return hubdbData;
                 }
             }
 
-            // Return LS Retail mock data
-            return this.getLSRetailMockData();
+            // Fallback to embedded data
+            const mockData = this.getLSRetailMockData();
+            this.dataSource = `Embedded (${mockData.rows?.length || 0})`;
+            Utils.log('Using embedded fallback data:', mockData.rows?.length || 0, 'rows');
+            return mockData;
+        },
+
+        async tryHubDB() {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 2000);
+
+            try {
+                const url = `${CONFIG.apiEndpoint}/${CONFIG.hubdbTableId}/rows?portalId=${CONFIG.portalId}&state=PUBLISHED`;
+                
+                if (CONFIG.debug) {
+                    Utils.log('Attempting HubDB fetch:', url);
+                }
+                
+                const response = await fetch(url, {
+                    headers: { 'Accept': 'application/json' },
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    this.setCachedData(data);
+                    Utils.log('✅ HubDB data loaded:', data.results?.length || data.rows?.length || 0, 'rows');
+                    
+                    // Normalize data format
+                    if (data.results && !data.rows) {
+                        data.rows = data.results;
+                    }
+                    
+                    return data;
+                } else {
+                    if (CONFIG.debug) {
+                        Utils.log('❌ HubDB response not OK:', response.status, response.statusText);
+                    }
+                }
+            } catch (error) {
+                clearTimeout(timeoutId);
+                if (error.name === 'AbortError') {
+                    if (CONFIG.debug) {
+                        Utils.log('⏱️ HubDB request timed out (2s)');
+                    }
+                } else if (error.message.includes('TypeError') || error.message.includes('CORS')) {
+                    if (CONFIG.debug) {
+                        Utils.log('🚫 CORS/Network error, using fallback');
+                    }
+                } else {
+                    if (CONFIG.debug) {
+                        Utils.error('❌ HubDB fetch failed:', error.message);
+                    }
+                }
+            }
+            
+            return null;
         },
 
         getCachedData: function() {
@@ -818,6 +870,11 @@
             this.cookieData = await HubDBIntegration.loadData();
             Utils.log('Cookie data loaded:', this.cookieData);
 
+            // Show verify badge if in verify mode
+            if (CONFIG.verifyMode) {
+                this.showVerifyBadge();
+            }
+
             // Intercept cookie settings button
             this.interceptCookieSettings();
 
@@ -1251,6 +1308,75 @@
                 }
                 this.currentConsent[key] = !!consentState[key];
             });
+        },
+
+        // Show verify badge with data source information
+        showVerifyBadge: function() {
+            if (!CONFIG.verifyMode) return;
+            
+            // Create badge
+            const badge = document.createElement('div');
+            badge.className = 'lsr-verify-badge';
+            badge.innerHTML = `
+                <div class="lsr-verify-content">
+                    <div class="lsr-verify-title">🔍 LSR Enhancer Debug</div>
+                    <div class="lsr-verify-info">
+                        <div><strong>Status:</strong> Active</div>
+                        <div><strong>Portal:</strong> ${CONFIG.portalId}</div>
+                        <div><strong>Data:</strong> ${HubDBIntegration.dataSource}</div>
+                        <div><strong>Table:</strong> ${CONFIG.hubdbTableId}</div>
+                    </div>
+                </div>
+            `;
+            
+            // Add CSS for badge
+            const style = document.createElement('style');
+            style.textContent = `
+                .lsr-verify-badge {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 99999;
+                    background: linear-gradient(135deg, #361d5c 0%, #4a2a6b 100%);
+                    color: white;
+                    padding: 12px;
+                    border-radius: 8px;
+                    font-family: system-ui, -apple-system, sans-serif;
+                    font-size: 12px;
+                    line-height: 1.4;
+                    box-shadow: 0 4px 12px rgba(54, 29, 92, 0.3);
+                    border: 1px solid rgba(246, 195, 112, 0.3);
+                    max-width: 280px;
+                }
+                
+                .lsr-verify-title {
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                    color: #f6c370;
+                    font-size: 13px;
+                }
+                
+                .lsr-verify-info div {
+                    margin: 4px 0;
+                }
+                
+                .lsr-verify-info strong {
+                    color: #f6c370;
+                    min-width: 60px;
+                    display: inline-block;
+                }
+            `;
+            
+            document.head.appendChild(style);
+            document.body.appendChild(badge);
+            
+            // Remove badge after 10 seconds
+            setTimeout(() => {
+                badge.style.opacity = '0';
+                badge.style.transform = 'translateX(100%)';
+                badge.style.transition = 'all 0.3s ease';
+                setTimeout(() => badge.remove(), 300);
+            }, 10000);
         }
     };
 

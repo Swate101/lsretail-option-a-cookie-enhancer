@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Retail Cookie Enhancer - Injection Test</title>
+</head>
+<body>
+    <h1>LS Retail Cookie Enhancer v1.0.2 Test</h1>
+    <p>This page provides the scripts to inject into LS Retail's site for testing.</p>
+    
+    <h2>How to Test:</h2>
+    <ol>
+        <li>Go to https://www.lsretail.com/banner</li>
+        <li>Enter password: 12345678</li>
+        <li>Open browser console (F12)</li>
+        <li>Copy and paste the injection script below</li>
+    </ol>
+    
+    <h2>Injection Script:</h2>
+    <pre id="injection-script">
+// Remove old script if exists
+const oldScript = document.querySelector('script[src*="cookie-enhancer"]');
+if (oldScript) oldScript.remove();
+
+// Inject CSS
+const css = document.createElement('link');
+css.rel = 'stylesheet';
+css.href = 'https://swate101.github.io/lsretail-option-a-cookie-enhancer/css/option-a-lsretail-cookie-enhancer.min.css';
+document.head.appendChild(css);
+
+// Inject fixed JavaScript v1.0.2
+const script = document.createElement('script');
+script.src = 'https://swate101.github.io/lsretail-option-a-cookie-enhancer/js/option-a-lsretail-cookie-enhancer.v1.0.2.min.js';
+script.onload = () => {
+    console.log('✅ Cookie Enhancer v1.0.2 loaded from GitHub Pages');
+    // Try to reinitialize if needed
+    if (window.LSRetailOptionA && window.LSRetailOptionA.enhancer) {
+        window.LSRetailOptionA.enhancer.init();
+        console.log('✅ Enhancer re-initialized');
+    }
+};
+document.body.appendChild(script);
+
+console.log('🔄 Loading Cookie Enhancer v1.0.2 with offsetParent fix...');
+    </pre>
+    
+    <button onclick="copyScript()">Copy Injection Script</button>
+    
+    <h2>What's Fixed in v1.0.2:</h2>
+    <ul>
+        <li>✅ Fixed offsetParent detection for position:fixed elements</li>
+        <li>✅ Includes CSS styling</li>
+        <li>✅ Proper initialization on banner detection</li>
+    </ul>
+    
+    <script>
+    function copyScript() {
+        const script = document.getElementById('injection-script').textContent;
+        navigator.clipboard.writeText(script).then(() => {
+            alert('Script copied to clipboard!');
+        });
+    }
+    </script>
+</body>
+</html>

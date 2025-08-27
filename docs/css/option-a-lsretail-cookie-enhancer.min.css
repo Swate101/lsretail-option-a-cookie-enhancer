@@ -1,0 +1,739 @@
+/**
+ * LS Retail Cookie Banner Enhancer - Option A Styles
+ * Designed to seamlessly integrate with HubSpot's banner
+ * Based on live analysis of LS Retail's implementation
+ */
+
+/* ================================
+   OPTION A CATEGORY CONTAINER
+   ================================ */
+
+.ls-option-a-categories {
+    margin: 20px 0 15px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(246, 195, 112, 0.2);
+    border-radius: 8px;
+    font-family: inherit;
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+}
+
+.ls-categories-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(246, 195, 112, 0.2);
+}
+
+.ls-categories-header h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f6c370;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ls-categories-header p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+/* ================================
+   INDIVIDUAL CATEGORY SECTIONS
+   ================================ */
+
+.ls-category {
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease-in-out;
+}
+
+.ls-category:hover {
+    border-color: rgba(246, 195, 112, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ls-category:last-child {
+    margin-bottom: 0;
+}
+
+/* ================================
+   CATEGORY HEADERS WITH LEARN MORE
+   ================================ */
+
+.ls-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ls-category-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+
+
+.ls-category-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.ls-category-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ================================
+   LEARN MORE BUTTONS (OPTION A KEY FEATURE)
+   ================================ */
+
+.ls-learn-more-btn {
+    background: transparent;
+    color: #f6c370;
+    border: 1px solid #f6c370;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.ls-learn-more-btn:hover {
+    background: #f6c370;
+    color: #361d5c;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(246, 195, 112, 0.3);
+}
+
+.ls-learn-more-btn:active {
+    transform: translateY(0);
+}
+
+.ls-learn-more-btn:focus {
+    outline: 2px solid #f6c370;
+    outline-offset: 2px;
+}
+
+/* Learn More button states */
+.ls-learn-more-btn[aria-expanded="true"] {
+    background: #f6c370;
+    color: #361d5c;
+    border-color: #f6c370;
+}
+
+.ls-learn-more-btn[aria-expanded="true"]:hover {
+    background: rgba(246, 195, 112, 0.8);
+}
+
+/* ================================
+   TOGGLE SWITCHES (LS RETAIL STYLE)
+   ================================ */
+
+.ls-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.ls-toggle-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ls-toggle-slider {
+    width: 48px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.ls-toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ls-toggle-input:checked + .ls-toggle-slider {
+    background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
+    border-color: #f6c370;
+}
+
+.ls-toggle-input:checked + .ls-toggle-slider::before {
+    transform: translateX(24px);
+    background: #361d5c;
+}
+
+.ls-toggle:hover .ls-toggle-slider {
+    box-shadow: 0 0 8px rgba(246, 195, 112, 0.3);
+}
+
+.ls-toggle-input:disabled + .ls-toggle-slider {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ls-toggle-input:disabled + .ls-toggle-slider::before {
+    background: #cccccc;
+}
+
+/* ================================
+   ALWAYS ACTIVE TEXT
+   ================================ */
+
+.ls-always-active {
+    color: #f6c370;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    background: rgba(246, 195, 112, 0.15);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(246, 195, 112, 0.3);
+    white-space: nowrap;
+}
+
+/* ================================
+   EXPANDABLE CATEGORY DETAILS - ENHANCED ANIMATIONS
+   ================================ */
+
+.ls-category-details {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.ls-category-details.expanded {
+    max-height: 600px;
+    opacity: 1;
+    transform: translateY(0);
+    border-top-color: rgba(246, 195, 112, 0.2);
+}
+
+/* Smooth animation for "SHOW LESS" state */
+.ls-category-details.collapsing {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.ls-category-description {
+    padding: 15px 18px 0 18px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ls-category-description p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ================================
+   COOKIES LIST STYLING - ENHANCED WITH SCROLLABLE CONTAINERS
+   ================================ */
+
+.ls-cookies-list {
+    padding: 0 18px 15px 18px;
+}
+
+.ls-cookies-list h4 {
+    margin: 15px 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f6c370;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(246, 195, 112, 0.2);
+}
+
+.ls-cookie-count {
+    background: rgba(246, 195, 112, 0.2);
+    color: #f6c370;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.ls-cookies-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 8px;
+}
+
+/* Custom scrollbar styling */
+.ls-cookies-list ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ls-cookies-list ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.ls-cookies-list ul::-webkit-scrollbar-thumb {
+    background: rgba(246, 195, 112, 0.3);
+    border-radius: 4px;
+}
+
+.ls-cookies-list ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(246, 195, 112, 0.5);
+}
+
+/* Firefox scrollbar */
+.ls-cookies-list ul {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(246, 195, 112, 0.3) rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced cookie item with table-like structure */
+.ls-cookie-item {
+    margin-bottom: 8px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.ls-cookie-item:hover {
+    border-color: rgba(246, 195, 112, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(246, 195, 112, 0.1);
+}
+
+.ls-cookie-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Table-like header structure */
+.ls-cookie-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    padding: 10px 12px 8px 12px;
+    background: rgba(246, 195, 112, 0.05);
+    border-bottom: 1px solid rgba(246, 195, 112, 0.1);
+    gap: 12px;
+}
+
+.ls-cookie-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ls-cookie-provider {
+    font-size: 10px;
+    color: rgba(246, 195, 112, 0.8);
+    background: rgba(246, 195, 112, 0.15);
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.ls-cookie-duration {
+    background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
+    color: #361d5c;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(246, 195, 112, 0.2);
+}
+
+/* Cookie details section */
+.ls-cookie-details {
+    padding: 10px 12px;
+}
+
+.ls-cookie-purpose {
+    font-size: 11px;
+    color: #f6c370;
+    margin-bottom: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.ls-cookie-description {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin: 0;
+    padding: 8px 0;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 8px 10px;
+    border-radius: 4px;
+    border-left: 3px solid rgba(246, 195, 112, 0.3);
+}
+
+/* ================================
+   ACTION BUTTONS
+   ================================ */
+
+.ls-action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(246, 195, 112, 0.2);
+}
+
+.ls-action-buttons button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    min-width: 120px;
+}
+
+.ls-save-btn {
+    background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
+    color: #361d5c;
+    border: 1px solid #f6c370;
+}
+
+.ls-save-btn:hover {
+    background: linear-gradient(135deg, #ffd67b 0%, #f6c370 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(246, 195, 112, 0.4);
+}
+
+.ls-accept-all-btn {
+    background: transparent;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+}
+
+.ls-accept-all-btn:hover {
+    background: #4caf50;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.3);
+}
+
+.ls-reject-all-btn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ls-reject-all-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   SUCCESS TOAST
+   ================================ */
+
+.ls-success-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+    z-index: 10001;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    transform: translateX(0);
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 768px) {
+    .ls-option-a-categories {
+        margin: 15px 0 10px 0;
+        padding: 15px;
+        border-radius: 6px;
+    }
+    
+    .ls-categories-header h3 {
+        font-size: 16px;
+    }
+    
+    .ls-categories-header p {
+        font-size: 13px;
+    }
+    
+    .ls-category-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 12px 15px;
+    }
+    
+    .ls-category-info {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .ls-category-controls {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .ls-learn-more-btn {
+        flex: 1;
+        max-width: 140px;
+        text-align: center;
+    }
+    
+    .ls-action-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .ls-action-buttons button {
+        width: 100%;
+        max-width: 250px;
+        min-width: auto;
+    }
+    
+    .ls-success-toast {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        right: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .ls-option-a-categories {
+        margin: 10px -10px;
+        padding: 12px;
+        border-radius: 4px;
+    }
+    
+    .ls-category {
+        margin-bottom: 12px;
+    }
+    
+    .ls-category-header {
+        padding: 10px 12px;
+    }
+    
+    .ls-category-label {
+        font-size: 14px;
+    }
+    
+    .ls-learn-more-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    .ls-toggle-slider {
+        width: 42px;
+        height: 22px;
+    }
+    
+    .ls-toggle-slider::before {
+        width: 16px;
+        height: 16px;
+        top: 2px;
+        left: 2px;
+    }
+    
+    .ls-toggle-input:checked + .ls-toggle-slider::before {
+        transform: translateX(20px);
+    }
+    
+    .ls-category-description,
+    .ls-cookies-list {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    /* Mobile cookie item adjustments */
+    .ls-cookie-header {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+    
+    .ls-cookie-name {
+        font-size: 12px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .ls-cookie-provider,
+    .ls-cookie-duration {
+        justify-self: center;
+    }
+    
+    .ls-cookie-details {
+        padding: 8px 10px;
+    }
+    
+    .ls-cookies-list ul {
+        max-height: 250px;
+    }
+}
+
+/* ================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .ls-category,
+    .ls-learn-more-btn,
+    .ls-toggle-slider,
+    .ls-toggle-slider::before,
+    .ls-cookie-item,
+    .ls-action-buttons button,
+    .ls-category-details {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .ls-success-toast {
+        animation: none !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .ls-option-a-categories {
+        border: 2px solid #f6c370;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .ls-category {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .ls-learn-more-btn {
+        border-width: 2px;
+    }
+    
+    .ls-toggle-slider {
+        border-width: 2px;
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+.ls-learn-more-btn:focus-visible,
+.ls-toggle:focus-within,
+.ls-action-buttons button:focus-visible {
+    outline: 2px solid #f6c370;
+    outline-offset: 2px;
+}
+
+/* ================================
+   DARK MODE COMPATIBILITY
+   ================================ */
+
+@media (prefers-color-scheme: dark) {
+    .ls-option-a-categories {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(246, 195, 112, 0.3);
+    }
+    
+    .ls-category {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    .ls-category-details {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .ls-cookie-item {
+        background: rgba(0, 0, 0, 0.1);
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+}

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Retail Option A - Complete Demo with All 54 Cookies</title>
+    
+    <style>
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #361d5c 0%, #4a2870 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(246, 195, 112, 0.2);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f6c370;
+        }
+        
+        .demo-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #f6c370;
+        }
+        
+        .demo-btn {
+            background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
+            color: #361d5c;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(246, 195, 112, 0.4);
+        }
+        
+        /* Cookie Banner Styles */
+        #hs-eu-cookie-confirmation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #361d5c 0%, #4a2870 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            border-top: 3px solid #f6c370;
+            display: none;
+        }
+        
+        #hs-eu-cookie-confirmation.show {
+            display: block;
+        }
+        
+        .banner-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .banner-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .banner-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .settings-btn {
+            background: transparent;
+            color: #f6c370;
+            border: 2px solid #f6c370;
+        }
+        
+        .settings-btn:hover {
+            background: #f6c370;
+            color: #361d5c;
+        }
+        
+        .accept-btn {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .decline-btn {
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Option A Categories */
+        .option-a-categories {
+            margin: 20px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid rgba(246, 195, 112, 0.2);
+            display: none;
+        }
+        
+        .option-a-categories.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .category-header h3 {
+            color: #f6c370;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        
+        .category {
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .category-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .category-icon {
+            font-size: 18px;
+        }
+        
+        .category-label {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .category-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .learn-more-btn {
+            background: transparent;
+            color: #f6c370;
+            border: 1px solid #f6c370;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .learn-more-btn:hover {
+            background: #f6c370;
+            color: #361d5c;
+        }
+        
+        .toggle {
+            position: relative;
+            width: 48px;
+            height: 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle.active {
+            background: #f6c370;
+        }
+        
+        .toggle::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle.active::before {
+            transform: translateX(24px);
+            background: #361d5c;
+        }
+        
+        .category-details {
+            max-height: 0;
+            overflow: hidden;
+            background: rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .category-details.expanded {
+            max-height: 300px;
+            padding: 15px;
+        }
+        
+        .cookie-list {
+            margin-top: 10px;
+        }
+        
+        .cookie-item {
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cookie-name {
+            font-weight: bold;
+            color: #f6c370;
+            font-size: 14px;
+        }
+        
+        .cookie-purpose {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+            margin: 4px 0;
+        }
+        
+        .cookie-description {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.3;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .save-btn {
+            background: linear-gradient(135deg, #f6c370 0%, #ffd67b 100%);
+            color: #361d5c;
+        }
+        
+        .accept-all-btn {
+            background: transparent;
+            color: #4caf50;
+            border: 1px solid #4caf50;
+        }
+        
+        .reject-all-btn {
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .always-active {
+            color: #f6c370;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: rgba(246, 195, 112, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(246, 195, 112, 0.3);
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .banner-buttons, .category-controls, .action-buttons {
+                flex-direction: column;
+            }
+            
+            .category-item {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            
+            .category-controls {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>LS Retail Cookie Enhancer - Live Demo</h1>
+            <p>Individual "Learn More" Links Implementation</p>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="demo-btn" onclick="showBanner()">Show Cookie Banner</button>
+            <button class="demo-btn" onclick="hideBanner()">Hide Banner</button>
+            <button class="demo-btn" onclick="resetDemo()">Reset Demo</button>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #f6c370; margin-top: 0;">🎯 How to Experience Option A:</h3>
+            <ol style="line-height: 1.8;">
+                <li><strong>Click "Show Cookie Banner"</strong> - Displays LS Retail's cookie banner</li>
+                <li><strong>Click "Manage Cookie Preferences"</strong> - This triggers Option A functionality</li>
+                <li><strong>Click individual "Learn More" buttons</strong> - See detailed cookie information expand</li>
+                <li><strong>Toggle cookie preferences</strong> - Control individual categories</li>
+                <li><strong>Save your preferences</strong> - Apply the changes</li>
+            </ol>
+        </div>
+        
+        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px;">
+            <div style="color: #f6c370; font-weight: bold;">Status Monitor:</div>
+            <div>Banner Status: <span id="banner-status">Hidden</span></div>
+            <div>Option A Status: <span id="option-status">Ready</span></div>
+            <div>Categories Status: <span id="categories-status">Not Shown</span></div>
+        </div>
+    </div>
+    
+    <!-- Mock HubSpot Cookie Banner -->
+    <div id="hs-eu-cookie-confirmation">
+        <div class="banner-content">
+            <div id="hs-eu-policy-wording">
+                <p>This website uses cookies to function properly and, with your consent, to collect data for analytics and personalized content. Essential cookies are always active. You can choose which types of optional cookies to allow by selecting "cookie settings" below.</p>
+            </div>
+            
+            <!-- Option A Categories (Initially Hidden) -->
+            <div id="option-a-categories" class="option-a-categories">
+                <div class="category-header">
+                    <h3>Choose Your Cookie Preferences</h3>
+                    <p>Click "Learn More" to see details about each cookie category.</p>
+                </div>
+                
+                <!-- Essential Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-label">Essential Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('essential')">Learn More</button>
+                            <span class="always-active">Always Active</span>
+                        </div>
+                    </div>
+                    <div id="essential-details" class="category-details">
+                        <p><strong>These cookies are necessary for LS Retail's platform to function properly (21 cookies).</strong></p>
+                        <div class="cookie-list">
+                            
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hscta.net | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hubspotvideo.com | Duration: 29 minutes</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hs_do_not_track</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 179 days</div>
+                                <div class="cookie-description">Prevents the tracking code from sending any information to HubSpot</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: usemessages.com | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hs-analytics.net | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hs-banner.com | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: linkedin.com | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hsadspixel.net | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hubspot.com | Duration: 29 minutes</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">MUID</div>
+                                <div class="cookie-purpose">Provider: clarity.ms | Duration: session</div>
+                                <div class="cookie-description">Identifies unique web browsers visiting Microsoft sites. These cookies are used for advertising, site analytics, and other operational purposes.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hsappstatic.net | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hsforms.com | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 29 minutes</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hs_cookie_cat_pref</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: session</div>
+                                <div class="cookie-description">The HubSpot Cookie Banner's consent preferences cookie.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hubspotusercontent-na1.net | Duration: 29 minutes</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">NID</div>
+                                <div class="cookie-purpose">Provider: google.com | Duration: 183 days</div>
+                                <div class="cookie-description">This cookies is used to collect website statistics and track conversion rates and Google ad personalisation</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">IDE</div>
+                                <div class="cookie-purpose">Provider: doubleclick.net | Duration: 399 days</div>
+                                <div class="cookie-description">This cookie is used for targeting, analyzing and optimisation of ad campaigns in DoubleClick/Google Marketing Suite</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__Secure-ROLLOUT_TOKEN</div>
+                                <div class="cookie-purpose">Provider: youtube.com | Duration: session</div>
+                                <div class="cookie-description">YouTube security token for progressive feature rollout and A/B testing.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hsforms.net | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hubspot.net | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Provider: hubspotusercontent10.net | Duration: session</div>
+                                <div class="cookie-description">Cloud flare's bot products identify and mitigate automated traffic to protect your site from bad bots. Cloudflare places the __cf_bm cookie on End User devices that access Customer sites that are protected by Bot Management or Bot Fight Mode. The __cf_bm cookie is necessary for the proper functioning of these bot solutions.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hs_cookie_cat_pref</div>
+                                <div class="cookie-purpose">Cookie consent preferences</div>
+                                <div class="cookie-description">The HubSpot Cookie Banner's consent preferences cookie that remembers your choices.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__cf_bm</div>
+                                <div class="cookie-purpose">Cloudflare bot management</div>
+                                <div class="cookie-description">Cloudflare's bot protection to prevent automated attacks and ensure secure access to LS Retail services.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">NID</div>
+                                <div class="cookie-purpose">Google services optimization</div>
+                                <div class="cookie-description">Used to collect website statistics and track conversion rates for Google ad personalization.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Functional Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-label">Functional Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('functional')">Learn More</button>
+                            <div class="toggle" onclick="toggleConsent('functional', this)"></div>
+                        </div>
+                    </div>
+                    <div id="functional-details" class="category-details">
+                        <p><strong>Enable enhanced functionality and personalization features (9 cookies).</strong></p>
+                        <div class="cookie-list">
+                            
+                            <div class="cookie-item">
+                                <div class="cookie-name">sp_t</div>
+                                <div class="cookie-purpose">Provider: spotify.com | Duration: session</div>
+                                <div class="cookie-description">Required to ensure the functionality of the integrated Spotify plugin. This does not result in any cross-site functionality.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">sp_landing</div>
+                                <div class="cookie-purpose">Provider: spotify.com | Duration: session</div>
+                                <div class="cookie-description">Required to ensure the functionality of the integrated Spotify plugin. This does not result in any cross-site functionality.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">AnalyticsSyncHistory</div>
+                                <div class="cookie-purpose">Provider: linkedin.com | Duration: 29 days</div>
+                                <div class="cookie-description">Used to store information about the time a sync with the lms_analytics cookie took place for users in the Designated Countries</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_clck</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: session</div>
+                                <div class="cookie-description">Microsoft Clarity click tracking cookie for user interaction analysis and website optimization.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">SRM_B</div>
+                                <div class="cookie-purpose">Provider: bing.com | Duration: session</div>
+                                <div class="cookie-description">Collected user data is specifically adapted to the user or device. The usercan also be followed outside of the loaded website, creating a picture of the visitor's behavior.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_clsk</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: session</div>
+                                <div class="cookie-description">Microsoft Clarity session key for maintaining user session state during analytics collection.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">ARRAffinitySameSite</div>
+                                <div class="cookie-purpose">Provider: runevents.net | Duration: session</div>
+                                <div class="cookie-description">When using Microsoft Azure as a hosting platform and enabling load balancing, this cookie ensures that requests from one visitor's browsing session are always handled by the same server in the cluster.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">test_cookie</div>
+                                <div class="cookie-purpose">Provider: doubleclick.net | Duration: 14 minutes</div>
+                                <div class="cookie-description">This cookie is set by DoubleClick (which is owned by Google) to determine if the website visitor's browser supports cookies.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">YSC</div>
+                                <div class="cookie-purpose">Provider: youtube.com | Duration: session</div>
+                                <div class="cookie-description">Registers a unique ID to keep statistics of what videos from YouTube the user has seen.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_clsk</div>
+                                <div class="cookie-purpose">Microsoft Clarity session data</div>
+                                <div class="cookie-description">Microsoft Clarity session data collection for website optimization and retail customer journey analysis.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">AnalyticsSyncHistory</div>
+                                <div class="cookie-purpose">LinkedIn analytics sync</div>
+                                <div class="cookie-description">Used to store information about analytics sync for users in designated countries.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">YSC</div>
+                                <div class="cookie-purpose">YouTube session tracking</div>
+                                <div class="cookie-description">Registers a unique ID to keep statistics of what LS Central videos the user has seen.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-label">Analytics Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('analytics')">Learn More</button>
+                            <div class="toggle" onclick="toggleConsent('analytics', this)"></div>
+                        </div>
+                    </div>
+                    <div id="analytics-details" class="category-details">
+                        <p><strong>Help us understand how businesses use our retail solutions (10 cookies).</strong></p>
+                        <div class="cookie-list">
+                            
+                            <div class="cookie-item">
+                                <div class="cookie-name">ar_debug</div>
+                                <div class="cookie-purpose">Provider: google-analytics.com | Duration: session</div>
+                                <div class="cookie-description">Google Analytics debug mode cookie for testing and validating tracking implementations.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_ga</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 399 days</div>
+                                <div class="cookie-description">ID used to identify users</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hstc</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 179 days</div>
+                                <div class="cookie-description">Analytics tracking cookie</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">li_sugr</div>
+                                <div class="cookie-purpose">Provider: linkedin.com | Duration: 89 days</div>
+                                <div class="cookie-description">Used to make a probabilistic match of a user's identity outside the Designated Countries</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_ga_CWBWGSSZTV</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 399 days</div>
+                                <div class="cookie-description">Used to persist session state</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">SM</div>
+                                <div class="cookie-purpose">Provider: clarity.ms | Duration: session</div>
+                                <div class="cookie-description">Microsoft Clarity session identifier for user experience analytics and heatmap generation.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">hubspotutk</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 179 days</div>
+                                <div class="cookie-description">Contains visitor's identity</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hssrc</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: session</div>
+                                <div class="cookie-description">Used to determine if a session is a new session</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hssc</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 29 minutes</div>
+                                <div class="cookie-description">Analytics session cookie</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">CLID</div>
+                                <div class="cookie-purpose">Provider: clarity.ms | Duration: session</div>
+                                <div class="cookie-description">Microsoft Clarity session ID for tracking user behavior and website performance metrics.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_ga_CWBWGSSZTV</div>
+                                <div class="cookie-purpose">Enhanced Google Analytics</div>
+                                <div class="cookie-description">Used to persist session state and provide enhanced analytics for LS Retail website optimization.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hstc</div>
+                                <div class="cookie-purpose">HubSpot visitor analytics</div>
+                                <div class="cookie-description">Analytics tracking cookie that tracks visitor sessions to optimize LS Central user experience.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">__hssc</div>
+                                <div class="cookie-purpose">HubSpot session tracking</div>
+                                <div class="cookie-description">Analytics session cookie that helps us understand user engagement during a single visit.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">hubspotutk</div>
+                                <div class="cookie-purpose">HubSpot visitor identification</div>
+                                <div class="cookie-description">Contains visitor's identity to personalize LS Central content for specific retail needs.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing Cookies -->
+                <div class="category">
+                    <div class="category-item">
+                        <div class="category-info">
+                            <span class="category-label">Marketing Cookies</span>
+                        </div>
+                        <div class="category-controls">
+                            <button class="learn-more-btn" onclick="toggleDetails('marketing')">Learn More</button>
+                            <div class="toggle" onclick="toggleConsent('marketing', this)"></div>
+                        </div>
+                    </div>
+                    <div id="marketing-details" class="category-details">
+                        <p><strong>Enable targeted content about our unified commerce solutions (14 cookies).</strong></p>
+                        <div class="cookie-list">
+                            
+                            <div class="cookie-item">
+                                <div class="cookie-name">MR</div>
+                                <div class="cookie-purpose">Provider: bing.com | Duration: 7 days</div>
+                                <div class="cookie-description">Used to collect information for analytics purposes.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">ANONCHK</div>
+                                <div class="cookie-purpose">Provider: clarity.ms | Duration: session</div>
+                                <div class="cookie-description">Used to store session ID for a users session to ensure that clicks from adverts on the Bing search engine are verified for reporting purposes and for personalisation</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">bcookie</div>
+                                <div class="cookie-purpose">Provider: linkedin.com | Duration: 365 days</div>
+                                <div class="cookie-description">Used by LinkedIn to track the use of embedded services.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_fbp</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 89 days</div>
+                                <div class="cookie-description">Facebook analytics cookie</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_gcl_au</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: 89 days</div>
+                                <div class="cookie-description">Used by Google AdSense for experimenting with advertisement efficiency across websites using their services.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_rdt_uuid</div>
+                                <div class="cookie-purpose">Provider: lsretail.com | Duration: session</div>
+                                <div class="cookie-description">This cookie is set by Reddit and is used for remarketing on reddit.com</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">lidc</div>
+                                <div class="cookie-purpose">Provider: linkedin.com | Duration: 1 days</div>
+                                <div class="cookie-description">Used by the social networking service, LinkedIn, for tracking the use of embedded services.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">MR</div>
+                                <div class="cookie-purpose">Provider: clarity.ms | Duration: session</div>
+                                <div class="cookie-description">Used to collect information for analytics purposes.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">UserMatchHistory</div>
+                                <div class="cookie-purpose">Provider: linkedin.com | Duration: 29 days</div>
+                                <div class="cookie-description">These cookies are set by LinkedIn for advertising purposes, including: tracking visitors so that more relevant ads can be presented, allowing users to use the 'Apply with LinkedIn' or the 'Sign-in with LinkedIn' functions, collecting information about how visitors use the site, etc.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">bscookie</div>
+                                <div class="cookie-purpose">Provider: linkedin.com | Duration: 364 days</div>
+                                <div class="cookie-description">Used by LinkedIn to track the use of embedded services.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">MUID</div>
+                                <div class="cookie-purpose">Provider: bing.com | Duration: 390 days</div>
+                                <div class="cookie-description">Identifies unique web browsers visiting Microsoft sites. These cookies are used for advertising, site analytics, and other operational purposes.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">VISITOR_INFO1_LIVE</div>
+                                <div class="cookie-purpose">Provider: youtube.com | Duration: 179 days</div>
+                                <div class="cookie-description">Tries to estimate the users' bandwidth on pages with integrated YouTube videos.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">fr</div>
+                                <div class="cookie-purpose">Provider: facebook.com | Duration: 89 days</div>
+                                <div class="cookie-description">Contains a unique browser and user ID, used for targeted advertising.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">VISITOR_PRIVACY_METADATA</div>
+                                <div class="cookie-purpose">Provider: youtube.com | Duration: session</div>
+                                <div class="cookie-description">YouTube visitor privacy metadata for GDPR compliance and privacy preference management.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_gcl_au</div>
+                                <div class="cookie-purpose">Google Ads conversion tracking</div>
+                                <div class="cookie-description">Used by Google AdSense for experimenting with advertisement efficiency across websites using their services.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">_rdt_uuid</div>
+                                <div class="cookie-purpose">Reddit Pixel tracking</div>
+                                <div class="cookie-description">This cookie is set by Reddit and is used for remarketing on reddit.com for LS Central solutions.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">bcookie</div>
+                                <div class="cookie-purpose">LinkedIn tracking</div>
+                                <div class="cookie-description">Used by LinkedIn to track the use of embedded services for professional targeting.</div>
+                            </div>
+                            <div class="cookie-item">
+                                <div class="cookie-name">fr</div>
+                                <div class="cookie-purpose">Facebook advertising</div>
+                                <div class="cookie-description">Contains a unique browser and user ID, used for targeted advertising about LS Central solutions.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn save-btn" onclick="savePreferences()">Confirm My Choices</button>
+                    <button class="action-btn accept-all-btn" onclick="acceptAll()">Accept All</button>
+                    <button class="action-btn reject-all-btn" onclick="rejectAll()">Reject All Optional</button>
+                </div>
+            </div>
+            
+            <div class="banner-buttons">
+                <button id="hs-eu-cookie-settings-button" class="banner-btn settings-btn" onclick="showOptionA()">Cookie settings</button>
+                <button class="banner-btn accept-btn" onclick="acceptAll()">Accept all</button>
+                <button class="banner-btn decline-btn" onclick="declineAll()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo State
+        let consentState = {
+            essential: true,
+            functional: false,
+            analytics: false,
+            marketing: false
+        };
+        
+        // Demo Functions
+        function showBanner() {
+            const banner = document.getElementById('hs-eu-cookie-confirmation');
+            banner.classList.add('show');
+            document.getElementById('banner-status').textContent = 'Visible';
+        }
+        
+        function hideBanner() {
+            const banner = document.getElementById('hs-eu-cookie-confirmation');
+            const categories = document.getElementById('option-a-categories');
+            banner.classList.remove('show');
+            categories.classList.remove('show');
+            document.getElementById('banner-status').textContent = 'Hidden';
+            document.getElementById('categories-status').textContent = 'Hidden';
+        }
+        
+        function resetDemo() {
+            hideBanner();
+            consentState = { essential: true, functional: false, analytics: false, marketing: false };
+            updateToggles();
+            // Close all expanded details
+            document.querySelectorAll('.category-details').forEach(detail => {
+                detail.classList.remove('expanded');
+            });
+            // Reset button text
+            document.querySelectorAll('.learn-more-btn').forEach(btn => {
+                btn.textContent = 'Learn More';
+            });
+            document.getElementById('option-status').textContent = 'Reset';
+            setTimeout(() => {
+                document.getElementById('option-status').textContent = 'Ready';
+            }, 1000);
+        }
+        
+        // Option A Functions
+        function showOptionA() {
+            const categories = document.getElementById('option-a-categories');
+            const settingsBtn = document.getElementById('hs-eu-cookie-settings-button');
+            
+            if (categories.classList.contains('show')) {
+                categories.classList.remove('show');
+                settingsBtn.textContent = 'Cookie settings';
+                document.getElementById('categories-status').textContent = 'Hidden';
+            } else {
+                categories.classList.add('show');
+                settingsBtn.textContent = 'Close Preferences Panel';
+                document.getElementById('categories-status').textContent = 'Showing Individual Categories';
+                document.getElementById('option-status').textContent = 'Active - Option A Engaged!';
+            }
+        }
+        
+        function toggleDetails(category) {
+            const details = document.getElementById(category + '-details');
+            const button = event.target;
+            
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+                button.textContent = 'Learn More';
+            } else {
+                details.classList.add('expanded');
+                button.textContent = 'Show Less';
+            }
+        }
+        
+        function toggleConsent(category, toggleEl) {
+            if (category === 'essential') return; // Cannot toggle essential
+            
+            consentState[category] = !consentState[category];
+            toggleEl.classList.toggle('active');
+            
+            console.log('Consent updated:', category, '=', consentState[category]);
+        }
+        
+        function updateToggles() {
+            Object.keys(consentState).forEach(category => {
+                const toggle = document.querySelector(`[onclick*="${category}"]`);
+                if (toggle && toggle.classList) {
+                    if (consentState[category]) {
+                        toggle.classList.add('active');
+                    } else {
+                        toggle.classList.remove('active');
+                    }
+                }
+            });
+        }
+        
+        function savePreferences() {
+            console.log('Saving preferences:', consentState);
+            showSuccessMessage('Your cookie preferences have been saved!');
+            hideBanner();
+        }
+        
+        function acceptAll() {
+            consentState.functional = true;
+            consentState.analytics = true;
+            consentState.marketing = true;
+            updateToggles();
+            console.log('Accepted all cookies');
+            showSuccessMessage('All cookies accepted!');
+            hideBanner();
+        }
+        
+        function rejectAll() {
+            consentState.functional = false;
+            consentState.analytics = false;
+            consentState.marketing = false;
+            updateToggles();
+            console.log('Rejected optional cookies');
+            showSuccessMessage('Optional cookies rejected!');
+            hideBanner();
+        }
+        
+        function declineAll() {
+            consentState.functional = false;
+            consentState.analytics = false;
+            consentState.marketing = false;
+            console.log('Declined all cookies');
+            showSuccessMessage('All optional cookies declined!');
+            hideBanner();
+        }
+        
+        function showSuccessMessage(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4caf50;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 6px;
+                box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+                z-index: 10001;
+                font-weight: 600;
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+        
+        // Auto-demo
+        setTimeout(() => {
+            showBanner();
+            
+            // Show helpful hint
+            setTimeout(() => {
+                const hint = document.createElement('div');
+                hint.style.cssText = `
+                    position: fixed;
+                    bottom: 150px;
+                    right: 20px;
+                    background: #f6c370;
+                    color: #361d5c;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                    z-index: 1001;
+                    animation: pulse 2s infinite;
+                `;
+                hint.innerHTML = '👆 Click "Cookie settings" to see Option A!';
+                document.body.appendChild(hint);
+                
+                setTimeout(() => hint.remove(), 8000);
+            }, 2000);
+        }, 2000);
+    </script>
+</body>
+</html>

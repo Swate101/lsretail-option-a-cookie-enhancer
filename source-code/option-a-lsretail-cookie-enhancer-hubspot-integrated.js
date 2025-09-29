@@ -1,7 +1,7 @@
 /**
  * LS Retail Cookie Banner Enhancer - HubSpot Integrated Version
  * Enhanced with HubSpot Consent Management Integration
- * @version 2.0.0 - HubSpot Integrated
+ * @version 2.1.0 - Corrected Initialization Logic
  */
 
 (function() {
@@ -28,36 +28,7 @@
         },
 
         // Cookie categories for Option A
-        categories: [
-            {
-                key: '1',
-                id: 'essential',
-                label: 'Essential Cookies',
-                description: 'These cookies are necessary for our LS Retail platform to function properly and cannot be disabled.',
-                required: true
-            },
-            {
-                key: '2',
-                id: 'functional',
-                label: 'Functional Cookies',
-                description: 'Enable enhanced functionality and personalization features for improved user experience.',
-                required: false
-            },
-            {
-                key: '3',
-                id: 'analytics',
-                label: 'Analytics Cookies',
-                description: 'Help us understand how businesses use our retail solutions to improve our products.',
-                required: false
-            },
-            {
-                key: '4',
-                id: 'marketing',
-                label: 'Marketing Cookies',
-                description: 'Enable targeted content about our unified commerce solutions for your business type.',
-                required: false
-            }
-        ],
+        categories:,
 
         // LS Retail brand colors from analysis
         brandColors: {
@@ -82,18 +53,18 @@
     const Utils = {
         log: function(...args) {
             if (CONFIG.debug) {
-                console.log('[LS Retail Option A - HubSpot Integrated]', ...args);
+                console.log('',...args);
             }
         },
 
         error: function(...args) {
-            console.error('[LS Retail Option A - HubSpot Integrated]', ...args);
+            console.error('',...args);
         },
 
         getCookie: function(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
-            return parts.length === 2 ? parts.pop().split(';').shift() : null;
+            return parts.length === 2? parts.pop().split(';').shift() : null;
         },
 
         parseConsentCookie: function() {
@@ -103,7 +74,7 @@
             const consent = {};
             cookie.split('_').forEach(part => {
                 const [key, value] = part.split(':');
-                if (key && value !== undefined) {
+                if (key && value!== undefined) {
                     consent[key] = value === 'true';
                 }
             });
@@ -123,7 +94,7 @@
 
             if (typeof window._hsp === 'undefined') {
                 Utils.log('HubSpot API not found, initializing');
-                window._hsp = window._hsp || [];
+                window._hsp = window._hsp ||;
             }
 
             Utils.log('Connected to LS Retail HubSpot portal 491011');
@@ -133,19 +104,13 @@
         },
 
         initRealAPI: function() {
-            window._hsp = window._hsp || [];
+            window._hsp = window._hsp ||;
 
             // Listen for consent updates
-            window._hsp.push(['addPrivacyConsentListener', function(consent) {
-                Utils.log('LS Retail consent updated:', consent);
-                OptionAEnhancer.updateConsentUI(consent);
-            }]);
+            window._hsp.push();
 
             // Get initial consent state
-            window._hsp.push(['getPrivacyConsentState', function(consentState) {
-                Utils.log('LS Retail initial consent:', consentState);
-                OptionAEnhancer.updateConsentUI(consentState);
-            }]);
+            window._hsp.push();
         },
 
         updateConsent: function(categoryKey, enabled) {
@@ -160,8 +125,8 @@
 
         // NEW: Set HubSpot consent for all categories at once
         setHubSpotConsent: function(consentObject) {
-            var _hsp = window._hsp = window._hsp || [];
-            _hsp.push(['setHubSpotConsent', consentObject]);
+            var _hsp = window._hsp = window._hsp ||;
+            _hsp.push();
             Utils.log('HubSpot consent set:', consentObject);
         }
     };
@@ -172,19 +137,22 @@
 
         async loadData() {
             // Check cache first (skip if debug mode)
-            const cached = !CONFIG.debug ? this.getCachedData() : null;
+            const cached =!CONFIG.debug? this.getCachedData() : null;
             if (cached) {
-                this.dataSource = `HubDB (${cached.rows?.length || 0}) [cached]`;
-                Utils.log('Using cached cookie data:', cached.rows?.length || 0, 'rows');
+                this.dataSource = `HubDB (${cached.rows?.length |
+
+| 0}) [cached]`;
+                Utils.log('Using cached cookie data:', cached.rows?.length |
+
+| 0, 'rows');
                 return cached;
             }
 
             // Try to load from HubDB
-            if (CONFIG.portalId !== 'YOUR_PORTAL_ID' && CONFIG.hubdbTableId !== 'YOUR_HUBDB_TABLE_ID') {
+            if (CONFIG.portalId!== 'YOUR_PORTAL_ID' && CONFIG.hubdbTableId!== 'YOUR_HUBDB_TABLE_ID') {
                 try {
                     const response = await fetch(
-                        `${CONFIG.apiEndpoint}/${CONFIG.hubdbTableId}/rows?portalId=${CONFIG.portalId}`,
-                        {
+                        `${CONFIG.apiEndpoint}/${CONFIG.hubdbTableId}/rows?portalId=${CONFIG.portalId}`, {
                             headers: {
                                 'Accept': 'application/json'
                             }
@@ -194,7 +162,9 @@
                     if (response.ok) {
                         const data = await response.json();
                         this.setCachedData(data);
-                        this.dataSource = `HubDB (${data.rows?.length || 0}) [live]`;
+                        this.dataSource = `HubDB (${data.rows?.length |
+
+| 0}) [live]`;
                         Utils.log('Loaded cookie data from HubDB');
                         return data;
                     }
@@ -205,7 +175,9 @@
 
             // Fallback to mock data
             const mockData = this.getLSRetailMockData();
-            this.dataSource = `Mock (${mockData.rows?.length || 0})`;
+            this.dataSource = `Mock (${mockData.rows?.length |
+
+| 0})`;
             return mockData;
         },
 
@@ -237,75 +209,7 @@
 
         getLSRetailMockData: function() {
             return {
-                rows: [
-                    // Essential cookies
-                    {
-                        values: {
-                            category_key: '1',
-                            cookie_name: '_hs_session',
-                            purpose: 'LS Retail session management',
-                            duration: 'Session',
-                            description: 'Essential for secure access to LS Central and maintaining your dashboard session'
-                        }
-                    },
-                    {
-                        values: {
-                            category_key: '1',
-                            cookie_name: '__hs_opt_out',
-                            purpose: 'Privacy preferences storage',
-                            duration: '13 months',
-                            description: 'Remembers your cookie consent choices for LS Retail services'
-                        }
-                    },
-                    // Functional cookies
-                    {
-                        values: {
-                            category_key: '2',
-                            cookie_name: '_hs_locale',
-                            purpose: 'Language preferences',
-                            duration: '1 year',
-                            description: 'Stores your language and regional preferences for LS Retail websites'
-                        }
-                    },
-                    // Analytics cookies
-                    {
-                        values: {
-                            category_key: '3',
-                            cookie_name: '_ga',
-                            purpose: 'Website analytics',
-                            duration: '2 years',
-                            description: 'Helps us understand how retail businesses use our website and solutions'
-                        }
-                    },
-                    {
-                        values: {
-                            category_key: '3',
-                            cookie_name: '__hstc',
-                            purpose: 'Visitor behavior tracking',
-                            duration: '13 months',
-                            description: 'Tracks visitor sessions to optimize the LS Central user experience'
-                        }
-                    },
-                    // Marketing cookies
-                    {
-                        values: {
-                            category_key: '4',
-                            cookie_name: '_fbp',
-                            purpose: 'Marketing campaign optimization',
-                            duration: '3 months',
-                            description: 'Enables targeted marketing about unified commerce solutions for your industry'
-                        }
-                    },
-                    {
-                        values: {
-                            category_key: '4',
-                            cookie_name: '__hs_cta_track',
-                            purpose: 'Content personalization',
-                            duration: '6 months',
-                            description: 'Personalizes content about LS Central features based on your business needs'
-                        }
-                    }
-                ]
+                rows:
             };
         }
     };
@@ -343,14 +247,14 @@
         waitForBanner: function() {
             return new Promise((resolve) => {
                 const existing = document.querySelector(CONFIG.selectors.banner);
-                if (existing && existing.offsetParent !== null) {
+                if (existing && existing.offsetParent!== null) {
                     resolve(existing);
                     return;
                 }
 
                 const observer = new MutationObserver((mutations) => {
                     const banner = document.querySelector(CONFIG.selectors.banner);
-                    if (banner && banner.offsetParent !== null) {
+                    if (banner && banner.offsetParent!== null) {
                         observer.disconnect();
                         resolve(banner);
                     }
@@ -450,7 +354,7 @@
             }
 
             const policyWording = this.banner.querySelector(CONFIG.selectors.policyWording);
-            if (policyWording && !this.categoryContainer.parentNode) {
+            if (policyWording &&!this.categoryContainer.parentNode) {
                 policyWording.insertAdjacentElement('afterend', this.categoryContainer);
             }
 
@@ -537,7 +441,7 @@
                         <input type="checkbox"
                                class="ls-toggle-input"
                                data-category="${category.key}"
-                               ${category.required ? 'checked disabled' : ''}>
+                               ${category.required? 'checked disabled' : ''}>
                         <span class="ls-toggle-slider"></span>
                     </label>
                 </div>
@@ -599,11 +503,11 @@
         },
 
         getCookiesForCategory: function(categoryKey) {
-            if (!this.cookieData || !this.cookieData.rows) return [];
+            if (!this.cookieData ||!this.cookieData.rows) return;
 
             return this.cookieData.rows
-                .filter(row => row.values.category_key === categoryKey)
-                .map(row => row.values);
+               .filter(row => row.values.category_key === categoryKey)
+               .map(row => row.values);
         },
 
         attachCategoryEventListeners: function(categoryEl, category) {
@@ -621,8 +525,10 @@
             });
 
             // Set initial state based on current consent
-            const isEnabled = this.currentConsent[category.key] !== false;
-            toggle.checked = category.required || isEnabled;
+            const isEnabled = this.currentConsent[category.key]!== false;
+            toggle.checked = category.required |
+
+| isEnabled;
         },
 
         toggleCategoryDetails: function(categoryEl, category) {
@@ -734,13 +640,8 @@
 
             // --- HUBSPOT INTEGRATION ---
             // Tell HubSpot that user has consented to all categories
-            var _hsp = window._hsp = window._hsp || [];
-            _hsp.push(['setHubSpotConsent', {
-                necessary: true,       // Essential cookies
-                functionality: true,   // Functional cookies
-                analytics: true,       // Analytics cookies
-                advertisement: true    // Marketing cookies
-            }]);
+            var _hsp = window._hsp = window._hsp ||;
+            _hsp.push();
             Utils.log('HubSpot consent updated: All categories accepted');
             // --- END HUBSPOT INTEGRATION ---
 
@@ -752,13 +653,8 @@
             Utils.log('Direct Accept All clicked - updating HubSpot consent');
 
             // --- HUBSPOT INTEGRATION ---
-            var _hsp = window._hsp = window._hsp || [];
-            _hsp.push(['setHubSpotConsent', {
-                necessary: true,
-                functionality: true,
-                analytics: true,
-                advertisement: true
-            }]);
+            var _hsp = window._hsp = window._hsp ||;
+            _hsp.push();
             // --- END HUBSPOT INTEGRATION ---
 
             // Update internal consent state
@@ -785,13 +681,8 @@
 
             // --- HUBSPOT INTEGRATION ---
             // Tell HubSpot that user has declined all optional categories
-            var _hsp = window._hsp = window._hsp || [];
-            _hsp.push(['setHubSpotConsent', {
-                necessary: true,       // Essential cookies (always true)
-                functionality: false,  // Functional cookies declined
-                analytics: false,      // Analytics cookies declined
-                advertisement: false   // Marketing cookies declined
-            }]);
+            var _hsp = window._hsp = window._hsp ||;
+            _hsp.push();
             Utils.log('HubSpot consent updated: Only necessary cookies accepted');
             // --- END HUBSPOT INTEGRATION ---
 
@@ -803,13 +694,8 @@
             Utils.log('Direct Decline All clicked - updating HubSpot consent');
 
             // --- HUBSPOT INTEGRATION ---
-            var _hsp = window._hsp = window._hsp || [];
-            _hsp.push(['setHubSpotConsent', {
-                necessary: true,      // Essential cookies (always true)
-                functionality: false,
-                analytics: false,
-                advertisement: false
-            }]);
+            var _hsp = window._hsp = window._hsp ||;
+            _hsp.push();
             // --- END HUBSPOT INTEGRATION ---
 
             // Update internal consent state
@@ -841,66 +727,27 @@
         },
 
         updateConsentUI: function(consentState) {
-            if (!consentState || !this.categoryContainer) return;
+            if (!consentState ||!this.categoryContainer) return;
 
             Object.keys(consentState).forEach(key => {
                 const toggle = this.categoryContainer.querySelector(`[data-category="${key}"]`);
                 if (toggle) {
-                    toggle.checked = !!consentState[key];
+                    toggle.checked =!!consentState[key];
                 }
-                this.currentConsent[key] = !!consentState[key];
+                this.currentConsent[key] =!!consentState[key];
             });
         }
     };
 
-    // ENHANCED: Wrap initialization in HubSpot consent listener
-    // This ensures the cookie enhancer only runs when user has given consent
-    function initializeWithConsent() {
-        var _hsp = window._hsp = window._hsp || [];
-
-        // Add listener to check for functionality consent before running
-        _hsp.push(['addPrivacyConsentListener', function(consent) {
-            Utils.log('Cookie Enhancer checking consent status:', consent);
-
-            // Check if functionality cookies are approved
-            // This ensures the enhancer only runs with proper consent
-            if (consent.categories && consent.categories.functionality) {
-                Utils.log('Functionality consent granted - initializing cookie enhancer');
-
-                // Initialize the main enhancer
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', () => {
-                        setTimeout(() => OptionAEnhancer.init(), 100);
-                    });
-                } else {
-                    setTimeout(() => OptionAEnhancer.init(), 100);
-                }
-            } else {
-                Utils.log('Functionality consent not granted - cookie enhancer will not run');
-            }
-        }]);
-
-        // Also check initial consent state
-        _hsp.push(['getPrivacyConsentState', function(consentState) {
-            Utils.log('Initial consent state:', consentState);
-
-            // If consent is already given, initialize immediately
-            if (!consentState || !consentState.categories) {
-                // No consent state yet, initialize anyway (first visit)
-                Utils.log('No consent state found - initializing for first-time visitors');
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', () => {
-                        setTimeout(() => OptionAEnhancer.init(), 100);
-                    });
-                } else {
-                    setTimeout(() => OptionAEnhancer.init(), 100);
-                }
-            }
-        }]);
+    // --- CORRECTED INITIALIZATION LOGIC ---
+    // This simple check ensures our script runs after the page is ready.
+    // The OptionAEnhancer.init() function is smart enough to wait for the
+    // HubSpot banner to appear, so we don't need complex consent listeners here.
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => OptionAEnhancer.init());
+    } else {
+        OptionAEnhancer.init();
     }
-
-    // Start the consent-aware initialization
-    initializeWithConsent();
 
     // Export for debugging and testing
     window.LSRetailOptionA = {
